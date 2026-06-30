@@ -75,6 +75,22 @@ nav a:hover{color:#d9d0c4;border:none}
   transition:border-color .2s;
 }
 .project-card:hover{border-color:#3a3530}
+
+/* Infrastructure grid */
+.infra-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+@media(max-width:600px){.infra-grid{grid-template-columns:1fr}}
+.infra-card{
+  background:#1c1a16;
+  border:1px solid #2a2722;
+  border-radius:10px;
+  padding:16px;
+  transition:border-color .2s;
+}
+.infra-card:hover{border-color:#3a3530}
+.infra-card h3{font-size:13px;font-weight:600;color:#e8e0d4;margin-bottom:2px}
+.infra-card .detail{font-size:12px;color:#7a6f64}
+.infra-card p{font-size:13px;color:#8a7e72;margin-top:6px;line-height:1.5}
+.infra-card .icon{font-size:18px;margin-bottom:6px;display:block}
 .project-card-header{
   padding:16px 20px;
   display:flex;
@@ -168,6 +184,7 @@ footer a:hover{color:#d4835a;border-color:#d4835a}
 <span style="font-family:'DM Serif Display',serif;font-size:18px;color:#f0eae2">S</span>
 <div class="nav-links">
 <a href="#projects">Projects</a>
+<a href="#infrastructure">Infra</a>
 <a href="#experience">Experience</a>
 <a href="#skills">Skills</a>
 <a href="#contact">Contact</a>
@@ -238,9 +255,40 @@ footer a:hover{color:#d4835a;border-color:#d4835a}
 </div>
 </section>
 
+<!-- Infrastructure -->
+<section class="section fade-in" id="infrastructure">
+<div class="section-header"><span class="section-number">02</span><span class="line"></span><span>Infrastructure</span></div>
+<div class="infra-grid">
+<div class="infra-card">
+<span class="icon">⎔</span>
+<h3>Kubernetes Cluster</h3>
+<div class="detail">MicroK8s · 6 services · ArgoCD</div>
+<p>Home cluster running Command Center, 9Router, Venso, Portainer, Velero, and this portfolio. GitOps via ArgoCD with automated sync.</p>
+</div>
+<div class="infra-card">
+<span class="icon">◈</span>
+<h3>Tailscale Mesh VPN</h3>
+<div class="detail">Zero-trust network</div>
+<p>All services air-gapped — zero public surface. Access only via WireGuard mesh. Critical services (CC, SSH) are Tailscale-only with no DNS records.</p>
+</div>
+<div class="infra-card">
+<span class="icon">◉</span>
+<h3>Security Stack</h3>
+<div class="detail">UFW · CrowdSec · Fail2ban · SSH port 2222</div>
+<p>Default-deny firewall, CrowdSec nftables IPS, fail2ban recidive jail (7-day ban), 19 IPs auto-blocked. Key-only SSH, password auth disabled.</p>
+</div>
+<div class="infra-card">
+<span class="icon">◇</span>
+<h3>Self-hosted AI</h3>
+<div class="detail">Ollama · ComfyUI · RTX 3060 Ti</div>
+<p>Local LLM inference via Ollama (llava:7b, glm-5.2 cloud-proxied). Stable Diffusion pipeline with RealVisXL + ESRGAN + GFPGAN on dedicated GPU.</p>
+</div>
+</div>
+</section>
+
 <!-- Experience -->
 <section class="section fade-in" id="experience">
-<div class="section-header"><span class="section-number">02</span><span class="line"></span><span>Experience</span></div>
+<div class="section-header"><span class="section-number">03</span><span class="line"></span><span>Experience</span></div>
 <div class="timeline">
 <div class="timeline-item current"><div class="date">June 2024 — Present</div><h3>Tech Lead · Lapasar</h3><div class="company">Squad of 10 engineers</div><ul><li>Migrated distributed systems to Kubernetes + ArgoCD</li><li>Managed 10M+ MongoDB records, composite indexing strategy</li><li>Sprint velocity up 30% through process improvements</li><li>Microservices in NestJS, Fastify, Hono</li></ul></div>
 <div class="timeline-item"><div class="date">June 2021 — June 2024</div><h3>Jr. Fullstack Developer · Lapasar</h3><ul><li>Built Angular/Vue.js portals, +20% operational efficiency</li><li>Optimized GraphQL/REST APIs, 25% faster response times</li><li>10+ mobile features with 100% API uptime</li></ul></div>
@@ -250,7 +298,7 @@ footer a:hover{color:#d4835a;border-color:#d4835a}
 
 <!-- Skills -->
 <section class="section fade-in" id="skills">
-<div class="section-header"><span class="section-number">03</span><span class="line"></span><span>Skills</span></div>
+<div class="section-header"><span class="section-number">04</span><span class="line"></span><span>Skills</span></div>
 <div class="skill-grid">
 <div class="skill-cat"><h3>Backend</h3><div class="skill-items"><span data-filter="typescript">TypeScript</span><span data-filter="nestjs">NestJS</span><span data-filter="node">Node.js</span><span data-filter="graphql">GraphQL</span><span data-filter="fastify">Fastify</span><span data-filter="hono">Hono</span></div></div>
 <div class="skill-cat"><h3>Frontend</h3><div class="skill-items"><span data-filter="react">React</span><span data-filter="svelte">Svelte</span><span data-filter="angular">Angular</span><span data-filter="vue">Vue.js</span><span data-filter="astro">Astro</span></div></div>
@@ -263,7 +311,7 @@ footer a:hover{color:#d4835a;border-color:#d4835a}
 
 <!-- Education -->
 <section class="section fade-in">
-<div class="section-header"><span class="section-number">04</span><span class="line"></span><span>Education & Awards</span></div>
+<div class="section-header"><span class="section-number">05</span><span class="line"></span><span>Education & Awards</span></div>
 <div class="edu-grid">
 <div class="edu-card"><h3>Bachelor of IT</h3><div class="detail">UiTM Perlis · 2021 · 3.44</div></div>
 <div class="edu-card"><h3>Diploma of Wood Industry</h3><div class="detail">UiTM Jengka · 2017 · 3.31</div></div>
