@@ -4,266 +4,262 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shahmil Saari</title>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: 'JetBrains Mono', monospace;
-  background: #0f0f0f;
-  color: #d4d4d4;
-  font-size: 14px;
-  line-height: 1.7;
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Inter',-apple-system,sans-serif;
+  background:#15130f;
+  color:#d9d0c4;
+  font-size:15px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
 }
-a { color: inherit; text-decoration: underline; text-decoration-color: #555; text-underline-offset: 3px; }
-a:hover { color: #fff; text-decoration-color: #fff; }
-.container { max-width: 720px; margin: 0 auto; padding: 48px 24px; }
-hr { border: none; border-top: 1px solid #222; margin: 48px 0; }
+::selection{background:#d4835a40}
+.container{max-width:800px;margin:0 auto;padding:60px 32px}
 
-/* Terminal header */
-.terminal-line { color: #888; font-size: 12px; margin-bottom: 4px; }
-.terminal-line span { color: #50fa7b; }
-.terminal-line .path { color: #569cd6; }
-.terminal-line .cursor { animation: blink 1s step-end infinite; }
-@keyframes blink { 50% { opacity: 0; } }
+h1{font-family:'DM Serif Display',serif;font-size:52px;line-height:1.1;color:#f0eae2;margin-bottom:12px;font-weight:400}
+h2{font-family:'DM Serif Display',serif;font-size:28px;font-weight:400;color:#f0eae2;margin-bottom:6px;margin-top:0;line-height:1.2}
+h3{font-size:17px;font-weight:600;color:#f0eae2;margin-bottom:4px}
+p{color:#a0998f;margin-bottom:0}
+a{color:#d4835a;text-decoration:none;border-bottom:1px solid #d4835a30;transition:border-color .2s}
+a:hover{border-color:#d4835a}
+.tagline{margin-bottom:32px;font-size:16px;color:#8a7e72}
+.meta{color:#7a6f64;font-size:13px;margin-bottom:4px}
 
-h1 { font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 8px; }
-h2 { font-size: 18px; font-weight: 500; color: #fff; margin-bottom: 20px; margin-top: 48px; }
-h2:first-of-type { margin-top: 0; }
-h3 { font-size: 14px; font-weight: 500; color: #fff; margin-bottom: 4px; }
-p { margin-bottom: 16px; color: #999; }
-.tagline { color: #569cd6; margin-bottom: 24px; font-size: 13px; }
-.location { color: #555; font-size: 12px; margin-bottom: 32px; }
-.meta { color: #555; font-size: 12px; }
+/* Layout */
+.section{margin-bottom:56px}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+.section-header .line{flex:1;height:1px;background:#2a2722}
+.section-number{font-size:13px;color:#7a6f64;font-family:'DM Serif Display',serif;font-style:italic}
 
-.links { display: flex; gap: 24px; margin-bottom: 48px; flex-wrap: wrap; }
-.links a { font-size: 13px; text-decoration: none; color: #888; }
-.links a:hover { color: #fff; }
+/* Hero */
+.hero{margin-bottom:48px}
+.hero .desc{font-size:17px;color:#a0998f;max-width:600px;margin-bottom:28px;line-height:1.7}
+.links{display:flex;gap:20px;flex-wrap:wrap}
+.links a{font-size:14px;font-weight:500;color:#c9bfb2;border-bottom:1px solid #3a3530}
+.links a:hover{color:#d4835a;border-color:#d4835a}
 
-.projects { display: flex; flex-direction: column; gap: 32px; margin-bottom: 16px; }
-.project { }
-.project-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 4px; }
-.project-name { color: #569cd6; font-weight: 500; font-size: 14px; }
-.project-tag { color: #555; font-size: 11px; }
-.project p { font-size: 13px; margin-bottom: 8px; color: #777; }
-.project-stack { display: flex; flex-wrap: wrap; gap: 6px; }
-.project-stack span {
-  font-size: 11px;
-  color: #666;
-  background: #1a1a1a;
-  padding: 2px 8px;
-  border-radius: 2px;
+/* Projects */
+.project-grid{display:grid;grid-template-columns:1fr;gap:20px}
+.project-card{
+  background:#1c1a16;
+  border:1px solid #2a2722;
+  border-radius:10px;
+  padding:20px 24px;
+  transition:border-color .2s,background .2s;
 }
-
-.job { margin-bottom: 28px; }
-.job-title { color: #fff; font-weight: 500; }
-.job-company { color: #569cd6; }
-.job-date { color: #555; font-size: 12px; }
-.job ul { list-style: none; margin-top: 8px; }
-.job ul li { color: #777; font-size: 13px; margin-bottom: 4px; padding-left: 16px; position: relative; }
-.job ul li::before { content: '>'; position: absolute; left: 0; color: #444; }
-
-.skills { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
-.skills span {
-  font-size: 12px;
-  color: #888;
-  background: #1a1a1a;
-  padding: 3px 10px;
-  border-radius: 2px;
+.project-card:hover{background:#201e1a;border-color:#3a3530}
+.project-card h3{font-size:15px;font-weight:600;color:#e8e0d4;margin-bottom:2px}
+.project-card .sub{font-size:13px;color:#7a6f64;margin-bottom:10px}
+.project-card p{font-size:14px;color:#8a7e72;margin-bottom:12px;line-height:1.6}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags span{
+  font-size:12px;
+  color:#8a7e72;
+  background:#23211c;
+  padding:3px 10px;
+  border-radius:4px;
+  border:1px solid #2a2722;
 }
 
-.edu-item { margin-bottom: 16px; }
-.edu-item .title { color: #ccc; }
-.edu-item .detail { color: #555; font-size: 12px; }
-.edu-item .gpa { color: #569cd6; font-size: 12px; }
+/* Experience */
+.timeline{position:relative}
+.timeline-item{
+  padding-left:28px;
+  padding-bottom:28px;
+  position:relative;
+  border-left:1px solid #2a2722;
+}
+.timeline-item:last-child{border-left:1px solid transparent;padding-bottom:0}
+.timeline-item::before{
+  content:'';
+  position:absolute;
+  left:-4px;
+  top:4px;
+  width:8px;height:8px;
+  border-radius:50%;
+  background:#2a2722;
+}
+.timeline-item.current::before{background:#d4835a}
+.timeline-item .date{font-size:12px;color:#7a6f64;margin-bottom:2px}
+.timeline-item .company{font-size:13px;color:#8a7e72;margin-bottom:8px}
+.timeline-item ul{list-style:none;margin-bottom:0}
+.timeline-item ul li{font-size:14px;color:#8a7e72;margin-bottom:3px;padding-left:0}
+.timeline-item ul li::before{content:'· ';color:#5a554a}
 
-footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #222; color: #444; font-size: 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-footer a { color: #555; }
+/* Skills grid */
+.skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+@media(max-width:600px){.skill-grid{grid-template-columns:1fr}}
+.skill-cat{}
+.skill-cat h3{font-size:13px;font-weight:600;color:#7a6f64;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px}
+.skill-items{display:flex;flex-wrap:wrap;gap:6px}
+.skill-items span{font-size:13px;color:#a0998f;background:#1c1a16;padding:4px 12px;border-radius:6px;border:1px solid #2a2722}
+
+/* Education & awards */
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:600px){.edu-grid{grid-template-columns:1fr}}
+.edu-card{background:#1c1a16;border-radius:8px;padding:16px;border:1px solid #2a2722}
+.edu-card h3{font-size:14px;font-weight:500;color:#e8e0d4}
+.edu-card .detail{font-size:13px;color:#7a6f64;margin-top:2px}
+
+/* Footer */
+footer{margin-top:56px;padding-top:24px;border-top:1px solid #2a2722;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:#5a554a}
+footer a{font-size:13px;color:#7a6f64;border-bottom:1px solid #2a2722}
+footer a:hover{color:#d4835a;border-color:#d4835a}
 </style>
 </head>
 <body>
 <div class="container">
 
-<!-- Terminal header -->
-<div class="terminal-line"><span>shahmil</span><span class="path">@server</span>:<span class="path">~</span>$ cat portfolio.md</div>
-<div class="terminal-line" style="margin-bottom: 32px;">___________________________________________</div>
-
+<!-- Hero -->
+<section class="hero">
 <h1>Shahmil Saari</h1>
-<p class="tagline">tech lead / fullstack developer / ai tooling</p>
-<p class="location">Kuala Lumpur, Malaysia</p>
-
+<div class="tagline">Tech Lead · Fullstack · AI Tooling · Kuala Lumpur</div>
+<p class="desc">I build infrastructure that doesn't fall over at 3am. Five years of backend, frontend, Kubernetes, and leading engineers who'd rather be writing code than in standup.</p>
 <div class="links">
-<a href="mailto:shahmilsaari@gmail.com">email</a>
-<a href="https://github.com/shahmilsaari" target="_blank">github</a>
-<a href="https://linkedin.com/in/shahmil-saari" target="_blank">linkedin</a>
-<a href="https://memory-core.shahmilsaari.my/" target="_blank">memory-core</a>
+<a href="mailto:shahmilsaari@gmail.com">Email</a>
+<a href="https://github.com/shahmilsaari" target="_blank">GitHub</a>
+<a href="https://linkedin.com/in/shahmil-saari" target="_blank">LinkedIn</a>
+<a href="https://memory-core.shahmilsaari.my/" target="_blank">Memory Core</a>
+</div>
+</section>
+
+<!-- About -->
+<section class="section">
+<div class="section-header"><span class="section-number">01</span><span class="line"></span><span>About</span></div>
+<p style="font-size:16px;color:#a0998f;max-width:650px;line-height:1.7">Currently Tech Lead at Lapasar, where I migrated a monolith to microservices on Kubernetes, managed 10M+ MongoDB records, and led a squad of 10 engineers. I care about infrastructure that's boring — it just works. Also maintain <a href="https://memory-core.shahmilsaari.my/" target="_blank">memory-core</a>, an open-source CLI that generates AI context files. 7,200+ npm downloads and counting.</p>
+</section>
+
+<!-- Projects -->
+<section class="section">
+<div class="section-header"><span class="section-number">02</span><span class="line"></span><span>Projects</span></div>
+<div class="project-grid">
+
+<div class="project-card">
+<h3>Command Center</h3>
+<div class="sub"><a href="https://github.com/shahmilsaari/command-center" target="_blank">github</a></div>
+<p>Monitoring dashboard for my home server. FastAPI + React — GPU temps, K8s pods, ArgoCD sync state, security logs, and a wiki with AI Q&A.</p>
+<div class="tags"><span>FastAPI</span><span>React</span><span>Tailwind</span><span>Tailscale</span><span>K8s</span></div>
 </div>
 
-<h2># about</h2>
-<p>I build infrastructure that doesn't fall over at 3am. 5+ years doing backend, frontend, kubernetes, and herding engineers. Currently tech lead at Lapasar, where I migrated monoliths to microservices and convinced 10 engineers that ArgoCD is not a cult (it's a lifestyle).</p>
-
-<h2># projects</h2>
-<div class="projects">
-
-<div class="project">
-<div class="project-header">
-<span class="project-name">command center</span>
-<span class="project-tag">[active]</span>
-</div>
-<p>Full-stack monitoring dashboard for my home server. FastAPI + React. Shows real-time GPU temps, K8s pod status, ArgoCD sync state, and has an AI-powered wiki search that actually works. Runs on tailscale, zero public surface.</p>
-<div class="project-stack"><span>fastapi</span><span>react</span><span>tailwind</span><span>tailscale</span><span>k8s</span></div>
+<div class="project-card">
+<h3>Memory Core</h3>
+<div class="sub"><a href="https://memory-core.shahmilsaari.my/" target="_blank">memory-core.shahmilsaari.my</a> · 7,200+ downloads</div>
+<p>Node.js CLI that generates AI context files from your architecture. Uses pgvector for embeddings, Ollama for inference. Claude, Cursor, Copilot all consume the output. v1.0.47.</p>
+<div class="tags"><span>Node.js</span><span>pgvector</span><span>PostgreSQL</span><span>Ollama</span></div>
 </div>
 
-<div class="project">
-<div class="project-header">
-<span class="project-name">memory core</span>
-<span class="project-tag">[npm: @shahmilsaari/memory-core]</span>
-</div>
-<p>Node.js CLI that generates AI context files from architecture profiles. 7.2k downloads. Uses pgvector for embeddings, ollama for inference. Claude, Cursor, Copilot all eat the output. v1.0.47.</p>
-<div class="project-stack"><span>node.js</span><span>pgvector</span><span>postgresql</span><span>ollama</span></div>
+<div class="project-card">
+<h3>LLM Wiki</h3>
+<div class="sub"><a href="https://github.com/shahmilsaari/wiki" target="_blank">github</a></div>
+<p>Markdown knowledge base in an Obsidian vault. Auto-syncs to GitHub every 2 hours. Integrated into Command Center with full-text search and an AI that reads the wiki to answer questions.</p>
+<div class="tags"><span>Markdown</span><span>Obsidian</span><span>Git</span></div>
 </div>
 
-<div class="project">
-<div class="project-header">
-<span class="project-name">llm wiki</span>
-<span class="project-tag">[github]</span>
-</div>
-<p>Self-hosted knowledge base. Markdown files in an Obsidian vault, auto-synced to GitHub every 2 hours. Integrated into command center with full-text search and an AI Q&A that reads the wiki to answer questions.</p>
-<div class="project-stack"><span>markdown</span><span>obsidian</span><span>git</span></div>
+<div class="project-card">
+<h3>9Router</h3>
+<div class="sub"><a href="https://router.shahmilsaari.my/" target="_blank">router.shahmilsaari.my</a></div>
+<p>LLM request router on MicroK8s. Sits between Ollama and cloud providers — rate limiting, usage tracking, provider failover. Hermes talks to it through an Ollama proxy.</p>
+<div class="tags"><span>Node.js</span><span>MicroK8s</span><span>SQLite</span></div>
 </div>
 
-<div class="project">
-<div class="project-header">
-<span class="project-name">9router</span>
-<span class="project-tag">[microk8s]</span>
-</div>
-<p>LLM request router on my home cluster. Sits between ollama and cloud providers (openrouter, etc.) with rate limiting, usage tracking, failover. Hermes talks to it through ollama proxy.</p>
-<div class="project-stack"><span>node.js</span><span>microk8s</span><span>sqlite</span></div>
+<div class="project-card">
+<h3>Venso</h3>
+<div class="sub"><a href="https://venso.my/" target="_blank">venso.my</a></div>
+<p>Concert ticket marketplace. Go API backend, multi-frontend architecture (admin, vendor, customer). Deployed on K8s with ArgoCD, PostgreSQL, NATS for eventing.</p>
+<div class="tags"><span>Go</span><span>NestJS</span><span>ArgoCD</span><span>PostgreSQL</span></div>
 </div>
 
-<div class="project">
-<div class="project-header">
-<span class="project-name">venso</span>
-<span class="project-tag">[venso.my]</span>
-</div>
-<p>Concert ticket marketplace. Go API, multi-frontend (admin/vendor/customer), deployed on K8s via ArgoCD. PostgreSQL, NATS for eventing.</p>
-<div class="project-stack"><span>go</span><span>nestjs</span><span>argocd</span><span>postgresql</span></div>
-</div>
-
-<div class="project">
-<div class="project-header">
-<span class="project-name">comfyui</span>
-<span class="project-tag">[rtx 3060 ti]</span>
-</div>
-<p>Stable Diffusion pipeline on my home server. RealVisXL + ESRGAN upscaler + GFPGAN for faces. GPU-powered image gen accessible via API.</p>
-<div class="project-stack"><span>python</span><span>cuda</span><span>stable-diffusion</span></div>
+<div class="project-card">
+<h3>ComfyUI Pipeline</h3>
+<div class="sub">Home server · RTX 3060 Ti</div>
+<p>Stable Diffusion on my home GPU. RealVisXL for generation, ESRGAN upscaling, GFPGAN face restoration. Accessible via HTTP API.</p>
+<div class="tags"><span>Python</span><span>CUDA</span><span>Stable Diffusion</span></div>
 </div>
 
 </div>
+</section>
 
-<h2># experience</h2>
+<!-- Experience -->
+<section class="section">
+<div class="section-header"><span class="section-number">03</span><span class="line"></span><span>Experience</span></div>
+<div class="timeline">
 
-<div class="job">
-<div class="job-title">Tech Lead <span class="job-company">@ Lapasar</span></div>
-<div class="job-date">June 2024 — present</div>
+<div class="timeline-item current">
+<div class="date">June 2024 — Present</div>
+<h3>Tech Lead · Lapasar</h3>
+<div class="company">Squad of 10 engineers</div>
 <ul>
-<li>Migrated distributed systems to Kubernetes/ArgoCD</li>
-<li>Managed 10M+ MongoDB records with composite indexing</li>
-<li>Led 10 engineers, sprint velocity up 30%</li>
+<li>Migrated distributed systems to Kubernetes + ArgoCD</li>
+<li>Managed 10M+ MongoDB records, composite indexing strategy</li>
+<li>Sprint velocity up 30% through process improvements</li>
 <li>Microservices in NestJS, Fastify, Hono</li>
 </ul>
 </div>
 
-<div class="job">
-<div class="job-title">Jr. Fullstack Developer <span class="job-company">@ Lapasar</span></div>
-<div class="job-date">June 2021 — June 2024</div>
+<div class="timeline-item">
+<div class="date">June 2021 — June 2024</div>
+<h3>Jr. Fullstack Developer · Lapasar</h3>
+<div class="company"></div>
 <ul>
-<li>Angular/Vue.js portals — 20% ops efficiency gain</li>
-<li>Optimized GraphQL/REST APIs, 25% faster responses</li>
-<li>10+ mobile features, 100% API uptime</li>
+<li>Built Angular/Vue.js portals, +20% operational efficiency</li>
+<li>Optimized GraphQL/REST APIs, 25% faster response times</li>
+<li>10+ mobile features with 100% API uptime</li>
 </ul>
 </div>
 
-<div class="job">
-<div class="job-title">IT Intern <span class="job-company">@ Felda Kerteh 6</span></div>
-<div class="job-date">2020 — 2021</div>
+<div class="timeline-item">
+<div class="date">2020 — 2021</div>
+<h3>IT Intern · Felda Kerteh 6</h3>
+<div class="company"></div>
 <ul>
-<li>Built custom registry system, 90% fewer manual errors</li>
-<li>MySQL tuning and admin support</li>
+<li>Built a custom registry system, 90% fewer manual errors</li>
+<li>MySQL tuning and administrative support</li>
 </ul>
 </div>
 
-<h2># technical arsenal</h2>
-
-<div style="margin-bottom: 24px;">
-<div style="color:#888; margin-bottom:8px;">backend</div>
-<div class="skills"><span>typescript</span><span>nestjs</span><span>node.js</span><span>graphql</span><span>fastify</span><span>hono</span></div>
 </div>
+</section>
 
-<div style="margin-bottom: 24px;">
-<div style="color:#888; margin-bottom:8px;">frontend</div>
-<div class="skills"><span>react</span><span>svelte</span><span>angular</span><span>vue.js</span><span>astro</span></div>
+<!-- Skills -->
+<section class="section">
+<div class="section-header"><span class="section-number">04</span><span class="line"></span><span>Skills</span></div>
+<div class="skill-grid">
+<div class="skill-cat"><h3>Backend</h3><div class="skill-items"><span>TypeScript</span><span>NestJS</span><span>Node.js</span><span>GraphQL</span><span>Fastify</span><span>Hono</span></div></div>
+<div class="skill-cat"><h3>Frontend</h3><div class="skill-items"><span>React</span><span>Svelte</span><span>Angular</span><span>Vue.js</span><span>Astro</span></div></div>
+<div class="skill-cat"><h3>Cloud & DevOps</h3><div class="skill-items"><span>Kubernetes</span><span>ArgoCD</span><span>Docker</span><span>AWS</span><span>Tailscale</span><span>Grafana</span></div></div>
+<div class="skill-cat"><h3>AI & LLM</h3><div class="skill-items"><span>Claude API</span><span>MCP</span><span>Ollama</span><span>LangChain</span><span>TensorFlow</span></div></div>
+<div class="skill-cat"><h3>Databases</h3><div class="skill-items"><span>PostgreSQL</span><span>MongoDB</span><span>MySQL</span><span>Redis</span><span>pgvector</span></div></div>
+<div class="skill-cat"><h3>Infrastructure</h3><div class="skill-items"><span>NATS</span><span>Event-driven</span><span>Microservices</span><span>CI/CD</span></div></div>
 </div>
+</section>
 
-<div style="margin-bottom: 24px;">
-<div style="color:#888; margin-bottom:8px;">cloud & devops</div>
-<div class="skills"><span>kubernetes</span><span>argocd</span><span>docker</span><span>aws</span><span>tailscale</span><span>grafana</span></div>
+<!-- Education -->
+<section class="section">
+<div class="section-header"><span class="section-number">05</span><span class="line"></span><span>Education & Awards</span></div>
+<div class="edu-grid">
+<div class="edu-card"><h3>Bachelor of IT</h3><div class="detail">UiTM Perlis · 2021 · CGPA 3.44</div></div>
+<div class="edu-card"><h3>Diploma of Wood Industry</h3><div class="detail">UiTM Jengka · 2017 · CGPA 3.31</div></div>
+<div class="edu-card"><h3>JavaScript Professional</h3><div class="detail">CertiProf · 2022</div></div>
+<div class="edu-card"><h3>Best Staff Award</h3><div class="detail">Lapasar · 2022</div></div>
+<div class="edu-card" style="grid-column:span 2"><h3>Best Intern Award</h3><div class="detail">Felda · 2021</div></div>
 </div>
+</section>
 
-<div style="margin-bottom: 24px;">
-<div style="color:#888; margin-bottom:8px;">ai & llm</div>
-<div class="skills"><span>claude api</span><span>mcp</span><span>ollama</span><span>langchain</span><span>tensorflow</span></div>
+<!-- Contact -->
+<section class="section" style="margin-bottom:0">
+<p style="font-family:'DM Serif Display',serif;font-size:24px;color:#e8e0d4;margin-bottom:16px">Currently open to leadership roles, AI projects, and architecture work. I reply to all emails.</p>
+<div class="links">
+<a href="mailto:shahmilsaari@gmail.com">shahmilsaari@gmail.com</a>
+<a href="https://github.com/shahmilsaari" target="_blank">GitHub</a>
+<a href="https://linkedin.com/in/shahmil-saari" target="_blank">LinkedIn</a>
 </div>
-
-<div style="margin-bottom: 24px;">
-<div style="color:#888; margin-bottom:8px;">databases</div>
-<div class="skills"><span>postgresql</span><span>mongodb</span><span>mysql</span><span>redis</span><span>pgvector</span></div>
-</div>
-
-<div style="margin-bottom: 24px;">
-<div style="color:#888; margin-bottom:8px;">infrastructure</div>
-<div class="skills"><span>nats</span><span>event-driven</span><span>microservices</span><span>ci/cd</span></div>
-</div>
-
-<h2># education & stuff</h2>
-
-<div class="edu-item">
-<div class="title">Bachelor of IT <span class="gpa">— 3.44</span></div>
-<div class="detail">UiTM Perlis — 2021</div>
-</div>
-
-<div class="edu-item">
-<div class="title">Diploma of Wood Industry <span class="gpa">— 3.31</span></div>
-<div class="detail">UiTM Jengka — 2017</div>
-</div>
-
-<div class="edu-item">
-<div class="title">JavaScript Professional</div>
-<div class="detail">CertiProf — 2022</div>
-</div>
-
-<div class="edu-item">
-<div class="title">Best Staff Award</div>
-<div class="detail">Lapasar — 2022</div>
-</div>
-
-<div class="edu-item">
-<div class="title">Best Intern Award</div>
-<div class="detail">Felda — 2021</div>
-</div>
-
-<p style="margin-top: 48px; color: #444; font-size: 13px;">
-Currently open to talking — leadership roles, ai projects, systems architecture. Hit me up.
-</p>
-
-<div class="links" style="margin-bottom: 0;">
-<a href="mailto:shahmilsaari@gmail.com">email</a>
-<a href="https://github.com/shahmilsaari" target="_blank">github</a>
-<a href="https://linkedin.com/in/shahmil-saari" target="_blank">linkedin</a>
-</div>
+</section>
 
 <footer>
-<span>shahmil@server:~$ uptime --pretty</span>
-<span>© 2026</span>
+<span>© 2026 · built by hand, not by AI</span>
+<span><a href="#">back to top ↑</a></span>
 </footer>
 
 </div>
