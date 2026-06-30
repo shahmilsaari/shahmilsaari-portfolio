@@ -1,271 +1,346 @@
-<!DOCTYPE html><html class="scroll-smooth" lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Shahmil Saari — Tech Lead, Fullstack Developer & AI Tooling Engineer. Building scalable architectures, Kubernetes ecosystems, and AI-powered infrastructure.">
+<meta name="description" content="Shahmil Saari — Tech Lead & AI Engineer. Building scalable architectures, Kubernetes ecosystems, and AI-powered infrastructure.">
 <meta property="og:title" content="Shahmil Saari | Tech Lead & AI Engineer">
 <meta property="og:description" content="Scaling systems and leading engineers with architectural precision.">
 <meta property="og:type" content="website">
 <link rel="icon" href="/favicon.svg">
 <title>Shahmil Saari | Tech Lead & AI Engineer</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
-tailwind.config={theme:{extend:{colors:{"background":"#0b1326","surface":"#0d1529","surface-dim":"#080f1e","surface-bright":"#1e2840","surface-container-lowest":"#060e20","surface-container-low":"#131b2e","surface-container":"#171f33","surface-container-high":"#1e2840","surface-container-highest":"#2d3449","surface-variant":"#2d3449","surface-tint":"#adc6ff","on-background":"#dae2fd","on-surface":"#dae2fd","on-surface-variant":"#c1c6d7","primary":"#adc6ff","on-primary":"#002e69","primary-container":"#004493","on-primary-container":"#d8e2ff","primary-fixed":"#d8e2ff","primary-fixed-dim":"#adc6ff","on-primary-fixed":"#001a41","on-primary-fixed-variant":"#003580","secondary":"#89ceff","on-secondary":"#003549","secondary-container":"#1e2d4a","on-secondary-container":"#bcc7dc","secondary-fixed":"#c9e6ff","secondary-fixed-dim":"#89ceff","on-secondary-fixed":"#001e2f","on-secondary-fixed-variant":"#003a52","tertiary":"#d8a0ff","on-tertiary":"#3d0066","tertiary-container":"#2a1040","on-tertiary-container":"#ecc8ff","tertiary-fixed":"#f0d9ff","tertiary-fixed-dim":"#d8a0ff","on-tertiary-fixed":"#2a0055","on-tertiary-fixed-variant":"#590093","error":"#ffb4ab","on-error":"#690005","error-container":"#93000a","on-error-container":"#ffdad6","outline":"#8b90a0","outline-variant":"#414755","inverse-surface":"#dae2fd","inverse-on-surface":"#0d1529","inverse-primary":"#005bbf"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-mobile":"16px","unit":"8px","gutter-desktop":"24px","margin-mobile":"16px","max-width":"1200px","margin-desktop":"auto"},fontFamily:{"headline-lg":["Roboto"],"display-lg-mobile":["Roboto"],"label-sm":["Roboto"],"body-lg":["Roboto"],"title-md":["Roboto"],"display-lg":["Roboto"],"title-lg":["Roboto"],"label-lg":["Roboto"],"headline-sm":["Roboto"],"body-md":["Roboto"]},fontSize:{"headline-lg":["32px",{lineHeight:"40px",fontWeight:"400"}],"display-lg-mobile":["45px",{lineHeight:"52px",letterSpacing:"0px",fontWeight:"400"}],"label-sm":["11px",{lineHeight:"16px",letterSpacing:"0.5px",fontWeight:"500"}],"body-lg":["16px",{lineHeight:"24px",letterSpacing:"0.5px",fontWeight:"400"}],"title-md":["16px",{lineHeight:"24px",letterSpacing:"0.15px",fontWeight:"500"}],"display-lg":["57px",{lineHeight:"64px",letterSpacing:"-0.25px",fontWeight:"400"}],"title-lg":["22px",{lineHeight:"28px",fontWeight:"500"}],"label-lg":["14px",{lineHeight:"20px",letterSpacing:"0.10px",fontWeight:"500"}],"headline-sm":["24px",{lineHeight:"32px",fontWeight:"400"}],"body-md":["14px",{lineHeight:"20px",letterSpacing:"0.25px",fontWeight:"400"}]}}}}
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 <style>
-.material-symbols-outlined{font-variation-settings:"FILL" 0,"wght" 400,"GRAD" 0,"opsz" 24;display:inline-block;vertical-align:middle}
-.fade-up{opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.4,0,.2,1)}
-.fade-up.visible{opacity:1;transform:translateY(0)}
-.scroll-elevation-3{box-shadow:0 4px 12px rgba(0,0,0,.05),0 1px 2px rgba(0,0,0,.1)}
-.hide-scrollbar::-webkit-scrollbar{display:none}
-:root{--color-primary:#adc6ff;--color-on-surface:#dae2fd;--color-on-surface-variant:#c1c6d7;--color-on-primary-container:#d8e2ff;--color-outline:#8b90a0}
-body{background:radial-gradient(circle at 15% 12%,rgba(75,142,255,.12),transparent 28rem),radial-gradient(circle at 86% 4%,rgba(100,80,200,.08),transparent 22rem),#0b1326;color:var(--color-on-surface)}
-.project-card:hover .project-link{transform:translateX(4px)}
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  33% { transform: translateY(-10px) rotate(1deg); }
+  66% { transform: translateY(5px) rotate(-1deg); }
+}
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-gradient { background-size: 200% 200%; animation: gradient-shift 8s ease infinite; }
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-pulse-soft { animation: pulse-soft 3s ease-in-out infinite; }
+.glass { background: rgba(15, 15, 25, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.06); }
+.glass-card { background: rgba(20, 20, 35, 0.6); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.06); }
+.glass-card:hover { background: rgba(30, 30, 50, 0.7); border-color: rgba(139, 92, 246, 0.3); }
+.gradient-text { background: linear-gradient(135deg, #a78bfa, #60a5fa, #2dd4bf); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.gradient-text-simple { background: linear-gradient(135deg, #c4b5fd, #93c5fd); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.gradient-border { position: relative; }
+.gradient-border::before { content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px; background: linear-gradient(135deg, rgba(139,92,246,0.5), rgba(96,165,250,0.3), rgba(45,212,191,0.2)); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: #0a0a14; color: #e2e8f0; }
+::selection { background: rgba(139, 92, 246, 0.3); }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.tag { padding: 4px 12px; border-radius: 9999px; font-size: 12px; font-weight: 500; background: rgba(139,92,246,0.1); color: #a78bfa; border: 1px solid rgba(139,92,246,0.15); transition: all 0.2s; }
+.tag:hover { background: rgba(139,92,246,0.2); border-color: rgba(139,92,246,0.3); }
+.section-label { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #a78bfa; margin-bottom: 8px; }
 </style>
 </head>
-<body class="font-body-lg" style="background:#0b1326;color:#dae2fd;">
+<body>
 
-<!-- Header -->
-<header class="bg-surface/90 backdrop-blur-md transition-shadow duration-300 sticky top-0 z-50 full-width" id="top-nav">
-<nav class="flex justify-between items-center w-full h-16 px-gutter-desktop max-w-max-width mx-auto">
-<div class="font-title-lg text-title-lg font-medium cursor-pointer active:scale-95 transition-transform" style="color:#dae2fd;">Shahmil Saari</div>
-<div id="nav-links" class="hidden md:flex gap-8 items-center">
-<a class="pb-1 transition-colors font-label-lg text-label-lg" style="color:#c1c6d7;" onmouseover="this.style.color='#adc6ff'" onmouseout="this.style.color='#c1c6d7'" href="#about">About</a>
-<a class="pb-1 transition-colors font-label-lg text-label-lg" style="color:#c1c6d7;" onmouseover="this.style.color='#adc6ff'" onmouseout="this.style.color='#c1c6d7'" href="#projects">Projects</a>
-<a class="pb-1 transition-colors font-label-lg text-label-lg" style="color:#c1c6d7;" onmouseover="this.style.color='#adc6ff'" onmouseout="this.style.color='#c1c6d7'" href="#experience">Experience</a>
-<a class="pb-1 transition-colors font-label-lg text-label-lg" style="color:#c1c6d7;" onmouseover="this.style.color='#adc6ff'" onmouseout="this.style.color='#c1c6d7'" href="#skills">Skills</a>
-<a class="pb-1 transition-colors font-label-lg text-label-lg" style="color:#c1c6d7;" onmouseover="this.style.color='#adc6ff'" onmouseout="this.style.color='#c1c6d7'" href="#contact">Contact</a>
+<!-- Nav -->
+<nav class="fixed top-0 left-0 right-0 z-50 glass">
+<div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+<a href="#" class="text-lg font-semibold tracking-tight text-white/90">Shahmil<span class="text-violet-400">.</span></a>
+<div class="hidden md:flex items-center gap-8">
+<a href="#about" class="text-sm text-white/50 hover:text-white/90 transition-colors">About</a>
+<a href="#projects" class="text-sm text-white/50 hover:text-white/90 transition-colors">Projects</a>
+<a href="#experience" class="text-sm text-white/50 hover:text-white/90 transition-colors">Experience</a>
+<a href="#skills" class="text-sm text-white/50 hover:text-white/90 transition-colors">Skills</a>
+<a href="#contact" class="text-sm bg-violet-600 hover:bg-violet-500 text-white px-5 py-2 rounded-full transition-all font-medium">Contact</a>
+</div>
 </div>
 </nav>
-</header>
 
-<main class="max-w-max-width mx-auto px-gutter-mobile md:px-gutter-desktop pb-24">
+<main class="max-w-6xl mx-auto px-6">
 
 <!-- Hero -->
-<section class="min-h-[70vh] flex flex-col justify-center py-24" id="hero">
+<section class="min-h-screen flex flex-col justify-center relative overflow-hidden" id="hero">
+<div class="absolute inset-0 overflow-hidden pointer-events-none">
+<div class="absolute -top-40 -right-40 w-96 h-96 bg-violet-600/20 rounded-full blur-[100px] animate-pulse-soft"></div>
+<div class="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-600/15 rounded-full blur-[100px] animate-pulse-soft" style="animation-delay: 1.5s;"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal-500/5 rounded-full blur-[120px]"></div>
+</div>
+<div class="relative z-10 max-w-3xl">
+<div class="flex items-center gap-2 mb-6">
+<span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+<span class="text-sm text-white/40 font-mono">Available for collaboration</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
+<span class="text-white">Hi, I'm</span><br>
+<span class="gradient-text">Shahmil Saari</span>
+</h1>
+<p class="text-lg md:text-xl text-white/40 leading-relaxed max-w-2xl mb-10">
+Tech Lead & AI Tooling Engineer. I build scalable architectures, lead engineering teams, and create infrastructure that doesn't break at 3 AM.
+</p>
+<div class="flex flex-wrap gap-4">
+<a href="mailto:shahmilsaari@gmail.com" class="inline-flex items-center gap-2 bg-violet-600 hover:bg-violet-500 text-white px-8 py-3.5 rounded-full font-medium transition-all">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+Email Me
+</a>
+<a href="https://github.com/shahmilsaari" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 border border-white/10 hover:border-white/25 text-white/70 hover:text-white px-8 py-3.5 rounded-full font-medium transition-all">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+GitHub
+</a>
+<a href="https://linkedin.com/in/shahmil-saari" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 border border-white/10 hover:border-white/25 text-white/70 hover:text-white px-8 py-3.5 rounded-full font-medium transition-all">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+LinkedIn
+</a>
+</div>
+</div>
+</section>
+
+<!-- Stats -->
+<section class="py-20 md:py-28">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="glass-card rounded-2xl p-6 text-center">
+<div class="text-3xl md:text-4xl font-bold gradient-text-simple mb-1">5+</div>
+<div class="text-sm text-white/40">Years Experience</div>
+</div>
+<div class="glass-card rounded-2xl p-6 text-center">
+<div class="text-3xl md:text-4xl font-bold gradient-text-simple mb-1">10</div>
+<div class="text-sm text-white/40">Engineers Led</div>
+</div>
+<div class="glass-card rounded-2xl p-6 text-center">
+<div class="text-3xl md:text-4xl font-bold gradient-text-simple mb-1">7.2k</div>
+<div class="text-sm text-white/40">NPM Downloads</div>
+</div>
+<div class="glass-card rounded-2xl p-6 text-center">
+<div class="text-3xl md:text-4xl font-bold gradient-text-simple mb-1">10M+</div>
+<div class="text-sm text-white/40">DB Records</div>
+</div>
+</div>
+</section>
+
+<!-- About -->
+<section class="py-20 md:py-28" id="about">
 <div class="max-w-3xl">
-<span class="font-title-md text-title-md mb-4 block" style="color:#adc6ff;">Available for collaboration</span>
-<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-2 leading-tight font-bold tracking-tight" style="color:#dae2fd;">Shahmil Saari</h1>
-<div class="flex items-center gap-2 mb-6" style="color:#c1c6d7;"><span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;font-size:18px;">location_on</span><span class="font-body-md text-body-md">Bukit Jalil, Kuala Lumpur, Malaysia</span></div>
-<p class="font-headline-sm text-headline-sm mb-8 max-w-2xl leading-relaxed" style="color:#c1c6d7;">Tech Lead | Fullstack Developer | AI Tooling Engineer. Scaling systems and leading engineers with architectural precision.</p>
-<div class="flex flex-wrap gap-4 mb-12">
-<a class="h-[48px] px-8 rounded-full flex items-center gap-2 transition-all active:scale-95" style="background:#adc6ff;color:#002e69;" href="mailto:shahmilsaari@gmail.com"><span class="material-symbols-outlined">mail</span><span class="font-label-lg text-label-lg">Email Me</span></a>
-<a class="h-[48px] px-8 rounded-full flex items-center gap-2 border transition-all active:scale-95" style="border-color:#adc6ff;color:#adc6ff;" href="https://github.com/shahmilsaari" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined">code</span><span class="font-label-lg text-label-lg">GitHub</span></a>
-<a class="h-[48px] px-8 rounded-full flex items-center gap-2 border transition-all active:scale-95" style="border-color:#adc6ff;color:#adc6ff;" href="https://linkedin.com/in/shahmil-saari" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined">group</span><span class="font-label-lg text-label-lg">LinkedIn</span></a>
-</div>
+<div class="section-label">About</div>
+<h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Engineering <span class="gradient-text">Impact</span></h2>
+<p class="text-lg text-white/40 leading-relaxed mb-8">
+Results-oriented Tech Lead specializing in building robust, scalable architectures and leading high-performing engineering teams. Passionate about AI tooling, Kubernetes ecosystems, and microservices. I focus on bridging the gap between complex technical debt and modern, automated infrastructure.
+</p>
 </div>
 </section>
 
-<!-- Engineering Impact -->
-<section class="py-24 grid grid-cols-1 md:grid-cols-12 gap-6" id="about">
-<div class="md:col-span-7 bg-surface-container-low p-8 md:p-12 rounded-[32px]">
-<h2 class="font-headline-lg text-headline-lg mb-8">Engineering Impact</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">A results-oriented Tech Lead specializing in building robust, scalable architectures and leading high-performing engineering teams. Passionate about AI tooling, Kubernetes ecosystems, and microservices. I focus on bridging the gap between complex technical debt and modern, automated infrastructure.</p>
-</div>
-<div class="md:col-span-5 grid grid-cols-2 gap-4">
-<div class="bg-primary-container text-on-primary-container p-6 rounded-[28px] flex flex-col justify-between"><span class="font-display-lg text-headline-lg font-bold">5+</span><span class="font-label-lg text-label-lg opacity-90">Years Experience</span></div>
-<div class="bg-secondary-container text-on-secondary-container p-6 rounded-[28px] flex flex-col justify-between"><span class="font-display-lg text-headline-lg font-bold">10</span><span class="font-label-lg text-label-lg opacity-90">Engineers Led</span></div>
-<div class="bg-tertiary-container text-on-tertiary-container p-6 rounded-[28px] flex flex-col justify-between"><span class="font-display-lg text-headline-lg font-bold">7.2k</span><span class="font-label-lg text-label-lg opacity-90">NPM Downloads</span></div>
-<div class="bg-surface-container-highest p-6 rounded-[28px] flex flex-col justify-between"><span class="font-display-lg text-headline-lg font-bold">10M+</span><span class="font-label-lg text-label-lg opacity-90">DB Records Managed</span></div>
-</div>
-</section>
-
-<!-- Featured Open Source -->
-<section class="py-12 fade-up">
-<div class="bg-primary p-1 md:p-1.5 rounded-[40px] shadow-2xl">
-<div class="bg-surface-container-lowest rounded-[36px] p-8 md:p-12 overflow-hidden relative">
-<div class="absolute top-0 right-0 p-8 opacity-10"><span class="material-symbols-outlined text-[120px]">terminal</span></div>
+<!-- Featured Project -->
+<section class="py-12">
+<div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-violet-600/10 to-blue-600/5 rounded-full blur-[80px]"></div>
 <div class="relative z-10">
-<div class="flex flex-wrap items-center gap-4 mb-6">
-<span class="bg-primary-container text-on-primary-container px-4 py-1.5 rounded-full font-label-lg text-label-lg uppercase tracking-wider">Featured Open Source</span>
-<span class="flex items-center gap-1 text-on-surface-variant font-body-md text-body-md"><span class="material-symbols-outlined text-sm">download</span> 7,200+ downloads</span>
+<div class="flex flex-wrap gap-3 mb-6">
+<span class="px-3 py-1 rounded-full text-xs font-medium bg-violet-600/20 text-violet-300 border border-violet-600/20">Featured Open Source</span>
+<span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-white/40">v1.0.47</span>
 </div>
-<h3 class="font-headline-lg text-headline-lg mb-4 font-bold">@shahmilsaari/memory-core</h3>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-2xl">Universal AI memory core — generate AI context files from architecture profiles with RAG support. Integrates with Claude, Cursor, Copilot and other AI tools for project-specific intelligence.</p>
+<h3 class="text-2xl md:text-3xl font-bold text-white mb-4">@shahmilsaari/memory-core</h3>
+<p class="text-white/40 leading-relaxed mb-6 max-w-2xl">Universal AI memory core — generate AI context files from architecture profiles with RAG support. Integrates with Claude, Cursor, Copilot and other AI tools for project-specific intelligence. <span class="text-white/60">7,200+ downloads.</span></p>
 <div class="flex flex-wrap gap-2 mb-8">
-<span class="h-8 px-4 rounded-full border border-outline flex items-center font-label-lg text-label-lg">RAG</span>
-<span class="h-8 px-4 rounded-full border border-outline flex items-center font-label-lg text-label-lg">CLI</span>
-<span class="h-8 px-4 rounded-full border border-outline flex items-center font-label-lg text-label-lg">Node.js</span>
-<span class="h-8 px-4 rounded-full border border-outline flex items-center font-label-lg text-label-lg">Claude</span>
-<span class="h-8 px-4 rounded-full border border-outline flex items-center font-label-lg text-label-lg">Cursor</span>
-<span class="h-8 px-4 rounded-full border border-outline flex items-center font-label-lg text-label-lg">Copilot</span>
+<span class="tag">RAG</span><span class="tag">CLI</span><span class="tag">Node.js</span><span class="tag">Claude</span><span class="tag">Cursor</span><span class="tag">Copilot</span>
 </div>
-<ul class="space-y-4 mb-8">
-<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary mt-1">check_circle</span><span class="font-body-md text-body-md">Generates structured AI context files from architecture profiles.</span></li>
-<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary mt-1">check_circle</span><span class="font-body-md text-body-md">RAG support for retrieval-augmented generation across AI tools.</span></li>
-<li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary mt-1">check_circle</span><span class="font-body-md text-body-md">v1.0.47 — actively maintained with 7,200+ downloads.</span></li>
-</ul>
-<a class="inline-flex items-center gap-2 text-primary font-title-md text-title-md hover:gap-4 transition-all" href="https://memory-core.shahmilsaari.my/" target="_blank" rel="noopener noreferrer">Visit Website <span class="material-symbols-outlined">arrow_forward</span></a>
-</div>
+<a href="https://memory-core.shahmilsaari.my/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-violet-400 hover:text-violet-300 font-medium transition-colors text-sm">
+Visit Website
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+</a>
 </div>
 </div>
 </section>
 
 <!-- Projects -->
-<section class="py-24 fade-up" id="projects">
-<h2 class="font-headline-lg text-headline-lg mb-12 text-center">Projects & Infrastructure</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-<!-- Command Center -->
-<a class="project-card block p-6 rounded-[24px] bg-surface-container-low border border-outline-variant hover:border-primary/50 transition-all hover:-translate-y-1 hover:shadow-lg" href="https://github.com/shahmilsaari/command-center" target="_blank" rel="noopener noreferrer">
-<div class="flex items-center gap-3 mb-3"><span class="material-symbols-outlined text-primary">monitoring</span><h3 class="font-title-md text-title-md font-semibold">Command Center</h3></div>
-<p class="text-on-surface-variant font-body-md text-body-md mb-3">Full-stack server monitoring dashboard. FastAPI + React with real-time stats, health checks, K8s pod viewer, ArgoCD status, and AI wiki Q&A.</p>
-<div class="flex flex-wrap gap-1.5"><span class="text-[10px] px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container">FastAPI</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container">React</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container">Tailwind</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container">Tailscale</span></div>
+<section class="py-20 md:py-28" id="projects">
+<div class="section-label">Projects</div>
+<h2 class="text-3xl md:text-4xl font-bold text-white mb-12">Things I've <span class="gradient-text">Built</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+<a href="https://github.com/shahmilsaari/command-center" target="_blank" rel="noopener noreferrer" class="group glass-card rounded-2xl p-6 transition-all hover:-translate-y-1">
+<div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-xl bg-violet-600/20 flex items-center justify-center"><svg class="w-5 h-5 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div><h3 class="font-semibold text-white group-hover:text-violet-300 transition-colors">Command Center</h3></div>
+<p class="text-sm text-white/40 leading-relaxed mb-4">Full-stack server monitoring dashboard. FastAPI + React with real-time stats, health checks, K8s pod viewer, ArgoCD status, and AI wiki Q&A.</p>
+<div class="flex flex-wrap gap-1.5"><span class="text-[10px] px-2 py-0.5 rounded-full bg-violet-600/10 text-violet-400">FastAPI</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-600/10 text-blue-400">React</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-teal-600/10 text-teal-400">Tailwind</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-white/30">Tailscale</span></div>
 </a>
-<!-- Memory Core -->
-<a class="project-card block p-6 rounded-[24px] bg-surface-container-low border border-outline-variant hover:border-primary/50 transition-all hover:-translate-y-1 hover:shadow-lg" href="https://memory-core.shahmilsaari.my/" target="_blank" rel="noopener noreferrer">
-<div class="flex items-center gap-3 mb-3"><span class="material-symbols-outlined text-tertiary">memory</span><h3 class="font-title-md text-title-md font-semibold">Memory Core</h3></div>
-<p class="text-on-surface-variant font-body-md text-body-md mb-3">AI context generation engine. Embedding-based retrieval from PostgreSQL/pgvector. Generates structured context files for Claude, Cursor, and Copilot.</p>
-<div class="flex flex-wrap gap-1.5"><span class="text-[10px] px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container">Node.js</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container">pgvector</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container">PostgreSQL</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container">Ollama</span></div>
+<a href="https://memory-core.shahmilsaari.my/" target="_blank" rel="noopener noreferrer" class="group glass-card rounded-2xl p-6 transition-all hover:-translate-y-1">
+<div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-xl bg-violet-600/20 flex items-center justify-center"><svg class="w-5 h-5 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg></div><h3 class="font-semibold text-white group-hover:text-violet-300 transition-colors">Memory Core</h3></div>
+<p class="text-sm text-white/40 leading-relaxed mb-4">AI context generation engine. Embedding-based retrieval from PostgreSQL/pgvector. Generates structured context files for Claude, Cursor, and Copilot.</p>
+<div class="flex flex-wrap gap-1.5"><span class="text-[10px] px-2 py-0.5 rounded-full bg-violet-600/10 text-violet-400">Node.js</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-600/10 text-blue-400">pgvector</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-teal-600/10 text-teal-400">PostgreSQL</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-white/30">Ollama</span></div>
 </a>
-<!-- LLM Wiki -->
-<a class="project-card block p-6 rounded-[24px] bg-surface-container-low border border-outline-variant hover:border-primary/50 transition-all hover:-translate-y-1 hover:shadow-lg" href="https://github.com/shahmilsaari/wiki" target="_blank" rel="noopener noreferrer">
-<div class="flex items-center gap-3 mb-3"><span class="material-symbols-outlined text-secondary">menu_book</span><h3 class="font-title-md text-title-md font-semibold">LLM Wiki</h3></div>
-<p class="text-on-surface-variant font-body-md text-body-md mb-3">Self-hosted knowledge base as interlinked markdown files. Obsidian vault with auto-sync, full-text search, and AI-powered Q&A over wiki content.</p>
-<div class="flex flex-wrap gap-1.5"><span class="text-[10px] px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container">Markdown</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container">Obsidian</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container">Git</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container">Docsify</span></div>
+<a href="https://github.com/shahmilsaari/wiki" target="_blank" rel="noopener noreferrer" class="group glass-card rounded-2xl p-6 transition-all hover:-translate-y-1">
+<div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-xl bg-blue-600/20 flex items-center justify-center"><svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div><h3 class="font-semibold text-white group-hover:text-blue-300 transition-colors">LLM Wiki</h3></div>
+<p class="text-sm text-white/40 leading-relaxed mb-4">Self-hosted knowledge base as interlinked markdown files. Obsidian vault with auto-sync, full-text search, and AI-powered Q&A over wiki content.</p>
+<div class="flex flex-wrap gap-1.5"><span class="text-[10px] px-2 py-0.5 rounded-full bg-violet-600/10 text-violet-400">Markdown</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-600/10 text-blue-400">Obsidian</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-teal-600/10 text-teal-400">Git</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-white/30">Docsify</span></div>
 </a>
-<!-- 9Router -->
-<a class="project-card block p-6 rounded-[24px] bg-surface-container-low border border-outline-variant hover:border-primary/50 transition-all hover:-translate-y-1 hover:shadow-lg" href="https://router.shahmilsaari.my/" target="_blank" rel="noopener noreferrer">
-<div class="flex items-center gap-3 mb-3"><span class="material-symbols-outlined text-primary">alt_route</span><h3 class="font-title-md text-title-md font-semibold">9Router</h3></div>
-<p class="text-on-surface-variant font-body-md text-body-md mb-3">AI request router running on MicroK8s. Routes LLM requests across providers (OpenRouter, Ollama cloud) with usage tracking and rate limiting.</p>
-<div class="flex flex-wrap gap-1.5"><span class="text-[10px] px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container">MicroK8s</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container">Node.js</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container">SQLite</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container">Docker</span></div>
+<a href="https://router.shahmilsaari.my/" target="_blank" rel="noopener noreferrer" class="group glass-card rounded-2xl p-6 transition-all hover:-translate-y-1">
+<div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-xl bg-teal-600/20 flex items-center justify-center"><svg class="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg></div><h3 class="font-semibold text-white group-hover:text-teal-300 transition-colors">9Router</h3></div>
+<p class="text-sm text-white/40 leading-relaxed mb-4">AI request router on MicroK8s. Routes LLM requests across providers with usage tracking, rate limiting, and provider failover.</p>
+<div class="flex flex-wrap gap-1.5"><span class="text-[10px] px-2 py-0.5 rounded-full bg-violet-600/10 text-violet-400">MicroK8s</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-600/10 text-blue-400">Node.js</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-teal-600/10 text-teal-400">SQLite</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-white/30">Docker</span></div>
 </a>
-<!-- Venso -->
-<a class="project-card block p-6 rounded-[24px] bg-surface-container-low border border-outline-variant hover:border-primary/50 transition-all hover:-translate-y-1 hover:shadow-lg" href="https://venso.my/" target="_blank" rel="noopener noreferrer">
-<div class="flex items-center gap-3 mb-3"><span class="material-symbols-outlined text-amber-400">confirmation_number</span><h3 class="font-title-md text-title-md font-semibold">Venso</h3></div>
-<p class="text-on-surface-variant font-body-md text-body-md mb-3">Concert ticket marketplace. Go API backend + multi-frontend architecture (admin, vendor, customer). Deployed on K8s with ArgoCD GitOps.</p>
-<div class="flex flex-wrap gap-1.5"><span class="text-[10px] px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container">Go</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container">NestJS</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container">ArgoCD</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container">PostgreSQL</span></div>
+<a href="https://venso.my/" target="_blank" rel="noopener noreferrer" class="group glass-card rounded-2xl p-6 transition-all hover:-translate-y-1">
+<div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-xl bg-amber-600/20 flex items-center justify-center"><svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"/></svg></div><h3 class="font-semibold text-white group-hover:text-amber-300 transition-colors">Venso</h3></div>
+<p class="text-sm text-white/40 leading-relaxed mb-4">Concert ticket marketplace. Go API backend with multi-frontend architecture (admin, vendor, customer). GitOps with ArgoCD.</p>
+<div class="flex flex-wrap gap-1.5"><span class="text-[10px] px-2 py-0.5 rounded-full bg-violet-600/10 text-violet-400">Go</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-600/10 text-blue-400">NestJS</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-teal-600/10 text-teal-400">ArgoCD</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-white/30">PostgreSQL</span></div>
 </a>
-<!-- ComfyUI -->
-<a class="project-card block p-6 rounded-[24px] bg-surface-container-low border border-outline-variant hover:border-primary/50 transition-all hover:-translate-y-1 hover:shadow-lg" href="https://github.com/comfyanonymous/ComfyUI" target="_blank" rel="noopener noreferrer">
-<div class="flex items-center gap-3 mb-3"><span class="material-symbols-outlined text-rose-400">palette</span><h3 class="font-title-md text-title-md font-semibold">ComfyUI</h3></div>
-<p class="text-on-surface-variant font-body-md text-body-md mb-3">Stable Diffusion pipeline running on RTX 3060 Ti. RealVisXL + ESRGAN upscaler + GFPGAN face restoration. GPU-accelerated image generation.</p>
-<div class="flex flex-wrap gap-1.5"><span class="text-[10px] px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container">Python</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container">CUDA</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container">Stable Diffusion</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-secondary-container/50 text-on-secondary-container">RTX 3060 Ti</span></div>
+<a href="https://github.com/comfyanonymous/ComfyUI" target="_blank" rel="noopener noreferrer" class="group glass-card rounded-2xl p-6 transition-all hover:-translate-y-1">
+<div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-xl bg-pink-600/20 flex items-center justify-center"><svg class="w-5 h-5 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div><h3 class="font-semibold text-white group-hover:text-pink-300 transition-colors">ComfyUI</h3></div>
+<p class="text-sm text-white/40 leading-relaxed mb-4">Stable Diffusion pipeline on RTX 3060 Ti. RealVisXL + ESRGAN upscaler + GFPGAN face restoration. GPU-accelerated image generation.</p>
+<div class="flex flex-wrap gap-1.5"><span class="text-[10px] px-2 py-0.5 rounded-full bg-violet-600/10 text-violet-400">Python</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-600/10 text-blue-400">CUDA</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-teal-600/10 text-teal-400">Stable Diffusion</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-white/30">RTX 3060 Ti</span></div>
 </a>
 </div>
 </section>
 
 <!-- Experience -->
-<section class="py-24 fade-up" id="experience">
-<h2 class="font-headline-lg text-headline-lg mb-12 text-center">Professional Experience</h2>
-<div class="space-y-8 relative before:absolute before:left-4 md:before:left-1/2 before:w-[2px] before:h-full before:bg-outline-variant before:-translate-x-1/2">
-<div class="relative flex flex-col md:flex-row gap-8 items-start md:items-center">
-<div class="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-primary border-4 border-background -translate-x-1/2 z-10 shadow-sm"></div>
-<div class="md:w-1/2 md:text-right md:pr-12 pl-12 md:pl-0"><span class="bg-primary-container text-on-primary-container px-3 py-1 rounded-md font-label-sm text-label-sm">June 2024 – Present</span></div>
-<div class="md:w-1/2 pl-12 md:pl-12">
-<div class="bg-surface-container-low p-6 rounded-[24px] border border-outline-variant hover:border-primary transition-colors group">
-<h4 class="font-title-lg text-title-lg group-hover:text-primary transition-colors">Tech Lead</h4>
-<p class="text-on-surface-variant font-body-md mb-4">Lapasar Sdn Bhd</p>
-<ul class="space-y-2 text-on-surface-variant font-body-md"><li>• Orchestrated Kubernetes/ArgoCD migration for distributed systems.</li><li>• Managed 10M+ records in MongoDB with advanced indexing strategies.</li><li>• Led a squad of 10 engineers, increasing sprint velocity by 30%.</li><li>• Architected microservices using NestJS, Fastify, and Hono.</li></ul>
+<section class="py-20 md:py-28" id="experience">
+<div class="section-label">Experience</div>
+<h2 class="text-3xl md:text-4xl font-bold text-white mb-12">Where I've <span class="gradient-text">Worked</span></h2>
+<div class="space-y-6">
+<div class="glass-card rounded-2xl p-8 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-violet-500 to-violet-500/20"></div>
+<div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
+<div><h3 class="text-xl font-semibold text-white">Tech Lead</h3><p class="text-white/40 text-sm">Lapasar Sdn Bhd</p></div>
+<span class="text-xs font-mono text-violet-400 bg-violet-600/10 px-3 py-1 rounded-full self-start">June 2024 – Present</span>
 </div>
+<ul class="space-y-2 text-sm text-white/40">
+<li class="flex items-start gap-2"><span class="text-violet-400 mt-1">▸</span> Orchestrated Kubernetes/ArgoCD migration for distributed systems.</li>
+<li class="flex items-start gap-2"><span class="text-violet-400 mt-1">▸</span> Managed 10M+ records in MongoDB with advanced indexing strategies.</li>
+<li class="flex items-start gap-2"><span class="text-violet-400 mt-1">▸</span> Led a squad of 10 engineers, increasing sprint velocity by 30%.</li>
+<li class="flex items-start gap-2"><span class="text-violet-400 mt-1">▸</span> Architected microservices using NestJS, Fastify, and Hono.</li>
+</ul>
 </div>
+<div class="glass-card rounded-2xl p-8 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-blue-500 to-blue-500/20"></div>
+<div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
+<div><h3 class="text-xl font-semibold text-white">Junior Fullstack Developer</h3><p class="text-white/40 text-sm">Lapasar Sdn Bhd</p></div>
+<span class="text-xs font-mono text-blue-400 bg-blue-600/10 px-3 py-1 rounded-full self-start">June 2021 – June 2024</span>
 </div>
-<div class="relative flex flex-col md:flex-row-reverse gap-8 items-start md:items-center">
-<div class="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-outline border-4 border-background -translate-x-1/2 z-10"></div>
-<div class="md:w-1/2 md:text-left md:pl-12 pl-12 md:pl-0"><span class="bg-surface-container-highest text-on-surface-variant px-3 py-1 rounded-md font-label-sm text-label-sm">June 2021 – June 2024</span></div>
-<div class="md:w-1/2 pr-12 pl-12 md:pl-0 md:text-right">
-<div class="bg-surface-container-low p-6 rounded-[24px] border border-outline-variant hover:border-primary transition-colors group">
-<h4 class="font-title-lg text-title-lg group-hover:text-primary transition-colors">Junior Fullstack Developer</h4>
-<p class="text-on-surface-variant font-body-md mb-4">Lapasar Sdn Bhd</p>
-<ul class="space-y-2 text-on-surface-variant font-body-md"><li>• Developed Angular/Vue.js portals, driving 20% operational efficiency.</li><li>• Optimized GraphQL/REST APIs achieving 25% faster response times.</li><li>• Integrated 10+ mobile app features with 100% API uptime.</li></ul>
+<ul class="space-y-2 text-sm text-white/40">
+<li class="flex items-start gap-2"><span class="text-blue-400 mt-1">▸</span> Developed Angular/Vue.js portals, driving 20% operational efficiency.</li>
+<li class="flex items-start gap-2"><span class="text-blue-400 mt-1">▸</span> Optimized GraphQL/REST APIs achieving 25% faster response times.</li>
+<li class="flex items-start gap-2"><span class="text-blue-400 mt-1">▸</span> Integrated 10+ mobile app features with 100% API uptime.</li>
+</ul>
 </div>
+<div class="glass-card rounded-2xl p-8 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-teal-500 to-teal-500/20"></div>
+<div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
+<div><h3 class="text-xl font-semibold text-white">IT Intern</h3><p class="text-white/40 text-sm">Felda Kerteh 6 Office</p></div>
+<span class="text-xs font-mono text-teal-400 bg-teal-600/10 px-3 py-1 rounded-full self-start">2020 – 2021</span>
 </div>
-</div>
-<div class="relative flex flex-col md:flex-row gap-8 items-start md:items-center">
-<div class="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-outline border-4 border-background -translate-x-1/2 z-10"></div>
-<div class="md:w-1/2 md:text-right md:pr-12 pl-12 md:pl-0"><span class="bg-surface-container-highest text-on-surface-variant px-3 py-1 rounded-md font-label-sm text-label-sm">2020 – 2021</span></div>
-<div class="md:w-1/2 pl-12 md:pl-12">
-<div class="bg-surface-container-low p-6 rounded-[24px] border border-outline-variant hover:border-primary transition-colors group">
-<h4 class="font-title-lg text-title-lg group-hover:text-primary transition-colors">IT Intern</h4>
-<p class="text-on-surface-variant font-body-md mb-4">Felda Kerteh 6 Office</p>
-<ul class="space-y-2 text-on-surface-variant font-body-md"><li>• Built a custom registry system, reducing manual entry errors by 90%.</li><li>• Performed MySQL database tuning and administrative support.</li></ul>
-</div>
-</div>
+<ul class="space-y-2 text-sm text-white/40">
+<li class="flex items-start gap-2"><span class="text-teal-400 mt-1">▸</span> Built a custom registry system, reducing manual entry errors by 90%.</li>
+<li class="flex items-start gap-2"><span class="text-teal-400 mt-1">▸</span> Performed MySQL database tuning and administrative support.</li>
+</ul>
 </div>
 </div>
 </section>
 
 <!-- Skills -->
-<section class="py-24 fade-up" id="skills">
-<h2 class="font-headline-lg text-headline-lg mb-12 text-center">Technical Arsenal</h2>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="space-y-6"><h3 class="font-title-lg text-title-lg flex items-center gap-2"><span class="material-symbols-outlined text-primary">terminal</span> Backend</h3><div class="flex flex-wrap gap-2"><span class="h-10 px-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center font-label-lg text-label-lg">TypeScript</span><span class="h-10 px-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center font-label-lg text-label-lg">NestJS</span><span class="h-10 px-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center font-label-lg text-label-lg">Node.js</span><span class="h-10 px-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center font-label-lg text-label-lg">GraphQL</span><span class="h-10 px-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center font-label-lg text-label-lg">Fastify</span><span class="h-10 px-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center font-label-lg text-label-lg">Hono</span></div></div>
-<div class="space-y-6"><h3 class="font-title-lg text-title-lg flex items-center gap-2"><span class="material-symbols-outlined text-primary">view_quilt</span> Frontend</h3><div class="flex flex-wrap gap-2"><span class="h-10 px-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center font-label-lg text-label-lg">React</span><span class="h-10 px-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center font-label-lg text-label-lg">Svelte</span><span class="h-10 px-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center font-label-lg text-label-lg">Angular</span><span class="h-10 px-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center font-label-lg text-label-lg">Vue.js</span><span class="h-10 px-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center font-label-lg text-label-lg">Astro</span></div></div>
-<div class="space-y-6"><h3 class="font-title-lg text-title-lg flex items-center gap-2"><span class="material-symbols-outlined text-primary">cloud</span> Cloud & DevOps</h3><div class="flex flex-wrap gap-2"><span class="h-10 px-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center font-label-lg text-label-lg">Kubernetes</span><span class="h-10 px-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center font-label-lg text-label-lg">ArgoCD</span><span class="h-10 px-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center font-label-lg text-label-lg">AWS</span><span class="h-10 px-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center font-label-lg text-label-lg">Docker</span><span class="h-10 px-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center font-label-lg text-label-lg">Grafana</span></div></div>
-<div class="space-y-6"><h3 class="font-title-lg text-title-lg flex items-center gap-2"><span class="material-symbols-outlined text-primary">psychology</span> AI & LLM</h3><div class="flex flex-wrap gap-2"><span class="h-10 px-6 rounded-full bg-primary text-on-primary flex items-center font-label-lg text-label-lg">Claude API</span><span class="h-10 px-6 rounded-full bg-primary text-on-primary flex items-center font-label-lg text-label-lg">MCP</span><span class="h-10 px-6 rounded-full bg-primary text-on-primary flex items-center font-label-lg text-label-lg">Ollama</span><span class="h-10 px-6 rounded-full bg-primary text-on-primary flex items-center font-label-lg text-label-lg">LangChain</span><span class="h-10 px-6 rounded-full bg-primary text-on-primary flex items-center font-label-lg text-label-lg">TensorFlow</span></div></div>
-<div class="space-y-6"><h3 class="font-title-lg text-title-lg flex items-center gap-2"><span class="material-symbols-outlined text-primary">database</span> Databases</h3><div class="flex flex-wrap gap-2"><span class="h-10 px-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center font-label-lg text-label-lg">PostgreSQL</span><span class="h-10 px-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center font-label-lg text-label-lg">MongoDB</span><span class="h-10 px-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center font-label-lg text-label-lg">MySQL</span><span class="h-10 px-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center font-label-lg text-label-lg">Redis</span><span class="h-10 px-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center font-label-lg text-label-lg">Vector Embeddings</span></div></div>
-<div class="space-y-6"><h3 class="font-title-lg text-title-lg flex items-center gap-2"><span class="material-symbols-outlined text-primary">hub</span> Infrastructure</h3><div class="flex flex-wrap gap-2"><span class="h-10 px-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center font-label-lg text-label-lg">NATS</span><span class="h-10 px-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center font-label-lg text-label-lg">Event-driven</span><span class="h-10 px-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center font-label-lg text-label-lg">Microservices</span><span class="h-10 px-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center font-label-lg text-label-lg">CI/CD</span><span class="h-10 px-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center font-label-lg text-label-lg">Tailscale</span></div></div>
+<section class="py-20 md:py-28" id="skills">
+<div class="section-label">Skills</div>
+<h2 class="text-3xl md:text-4xl font-bold text-white mb-12">Technical <span class="gradient-text">Arsenal</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+<div class="glass-card rounded-2xl p-6">
+<h3 class="flex items-center gap-2 font-semibold text-white mb-4"><svg class="w-5 h-5 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg> Backend</h3>
+<div class="flex flex-wrap gap-2"><span class="tag">TypeScript</span><span class="tag">NestJS</span><span class="tag">Node.js</span><span class="tag">GraphQL</span><span class="tag">Fastify</span><span class="tag">Hono</span></div>
+</div>
+<div class="glass-card rounded-2xl p-6">
+<h3 class="flex items-center gap-2 font-semibold text-white mb-4"><svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg> Frontend</h3>
+<div class="flex flex-wrap gap-2"><span class="tag">React</span><span class="tag">Svelte</span><span class="tag">Angular</span><span class="tag">Vue.js</span><span class="tag">Astro</span></div>
+</div>
+<div class="glass-card rounded-2xl p-6">
+<h3 class="flex items-center gap-2 font-semibold text-white mb-4"><svg class="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg> Cloud & DevOps</h3>
+<div class="flex flex-wrap gap-2"><span class="tag">Kubernetes</span><span class="tag">ArgoCD</span><span class="tag">AWS</span><span class="tag">Docker</span><span class="tag">Grafana</span></div>
+</div>
+<div class="glass-card rounded-2xl p-6">
+<h3 class="flex items-center gap-2 font-semibold text-white mb-4"><svg class="w-5 h-5 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg> AI & LLM</h3>
+<div class="flex flex-wrap gap-2"><span class="tag">Claude API</span><span class="tag">MCP</span><span class="tag">Ollama</span><span class="tag">LangChain</span><span class="tag">TensorFlow</span></div>
+</div>
+<div class="glass-card rounded-2xl p-6">
+<h3 class="flex items-center gap-2 font-semibold text-white mb-4"><svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg> Databases</h3>
+<div class="flex flex-wrap gap-2"><span class="tag">PostgreSQL</span><span class="tag">MongoDB</span><span class="tag">MySQL</span><span class="tag">Redis</span><span class="tag">pgvector</span></div>
+</div>
+<div class="glass-card rounded-2xl p-6">
+<h3 class="flex items-center gap-2 font-semibold text-white mb-4"><svg class="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg> Infrastructure</h3>
+<div class="flex flex-wrap gap-2"><span class="tag">NATS</span><span class="tag">Event-driven</span><span class="tag">Microservices</span><span class="tag">CI/CD</span><span class="tag">Tailscale</span></div>
+</div>
 </div>
 </section>
 
-<!-- Education & Awards -->
-<div class="py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 fade-up">
-<section><h2 class="font-headline-lg text-headline-lg mb-8">Education</h2>
-<div class="space-y-4">
-<div class="p-6 rounded-[24px] bg-surface-container-low border border-outline-variant">
-<div class="flex justify-between items-start mb-2"><h4 class="font-title-lg text-title-lg">Bachelor of IT</h4><span class="font-label-lg text-label-lg text-primary">3.44 CGPA</span></div>
-<p class="text-on-surface-variant font-body-md">UiTM Perlis | 2021</p>
+<!-- Education -->
+<section class="py-20 md:py-28">
+<div class="section-label">Background</div>
+<h2 class="text-3xl md:text-4xl font-bold text-white mb-12">Education & <span class="gradient-text">Awards</span></h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="glass-card rounded-2xl p-6">
+<div class="flex justify-between items-start mb-2"><h3 class="font-semibold text-white">Bachelor of IT</h3><span class="text-xs font-mono text-violet-400">3.44 CGPA</span></div>
+<p class="text-sm text-white/40">UiTM Perlis — 2021</p>
 </div>
-<div class="p-6 rounded-[24px] bg-surface-container-low border border-outline-variant">
-<div class="flex justify-between items-start mb-2"><h4 class="font-title-lg text-title-lg">Diploma of Wood Industry</h4><span class="font-label-lg text-label-lg text-primary">3.31 CGPA</span></div>
-<p class="text-on-surface-variant font-body-md">UiTM Jengka | 2017</p>
+<div class="glass-card rounded-2xl p-6">
+<div class="flex justify-between items-start mb-2"><h3 class="font-semibold text-white">Diploma of Wood Industry</h3><span class="text-xs font-mono text-violet-400">3.31 CGPA</span></div>
+<p class="text-sm text-white/40">UiTM Jengka — 2017</p>
 </div>
-</div>
-</section>
-<section><h2 class="font-headline-lg text-headline-lg mb-8">Awards & Certs</h2>
-<div class="space-y-4">
-<div class="flex items-center gap-6 p-4 rounded-[20px] bg-surface-container hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[2rem]" style="color:#c1c6d7;">workspace_premium</span><div><p class="font-title-md text-title-md">JavaScript Professional</p><p class="text-on-surface-variant font-body-md text-body-md">CertiProf | 2022</p></div></div>
-<div class="flex items-center gap-6 p-4 rounded-[20px] bg-surface-container hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[2rem]" style="color:#c1c6d7;">workspace_premium</span><div><p class="font-title-md text-title-md">Best Staff Award</p><p class="text-on-surface-variant font-body-md text-body-md">Lapasar | 2022</p></div></div>
-<div class="flex items-center gap-6 p-4 rounded-[20px] bg-surface-container hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[2rem]" style="color:#c1c6d7;">workspace_premium</span><div><p class="font-title-md text-title-md">Best Intern Award</p><p class="text-on-surface-variant font-body-md text-body-md">Felda | 2021</p></div></div>
+<div class="flex items-center gap-4 glass-card rounded-2xl p-6"><span class="w-10 h-10 rounded-xl bg-violet-600/20 flex items-center justify-center"><span class="text-violet-400 text-lg">🏆</span></span><div><p class="font-medium text-white">JavaScript Professional</p><p class="text-xs text-white/40">CertiProf — 2022</p></div></div>
+<div class="flex items-center gap-4 glass-card rounded-2xl p-6"><span class="w-10 h-10 rounded-xl bg-blue-600/20 flex items-center justify-center"><span class="text-blue-400 text-lg">🏆</span></span><div><p class="font-medium text-white">Best Staff Award</p><p class="text-xs text-white/40">Lapasar — 2022</p></div></div>
 </div>
 </section>
-</div>
 
 <!-- Contact -->
-<section class="py-24 text-center fade-up" id="contact">
-<h2 class="font-headline-lg text-headline-lg mb-4">Let's build something exceptional.</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-xl mx-auto">Currently open to leadership roles, AI-driven projects, and complex system architecting.</p>
+<section class="py-20 md:py-28 text-center" id="contact">
+<div class="max-w-2xl mx-auto">
+<h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Let's build something <span class="gradient-text">exceptional</span></h2>
+<p class="text-white/40 text-lg mb-10">Currently open to leadership roles, AI-driven projects, and complex system architecting.</p>
 <div class="flex flex-wrap justify-center gap-4">
-<a class="bg-surface text-primary h-[56px] px-8 rounded-full flex items-center gap-2 hover:bg-surface-bright transition-all active:scale-95" href="mailto:shahmilsaari@gmail.com"><span class="material-symbols-outlined">mail</span><span class="font-title-md text-title-md">Email Me</span></a>
-<a class="bg-transparent border-2 border-on-primary-container/30 text-on-primary-container h-[56px] px-8 rounded-full flex items-center gap-2 hover:bg-on-primary-container/10 transition-all active:scale-95" href="https://linkedin.com/in/shahmil-saari" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined">group</span><span class="font-title-md text-title-md">LinkedIn</span></a>
-<a class="bg-transparent border-2 border-on-primary-container/30 text-on-primary-container h-[56px] px-8 rounded-full flex items-center gap-2 hover:bg-on-primary-container/10 transition-all active:scale-95" href="https://github.com/shahmilsaari" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined">code</span><span class="font-title-md text-title-md">GitHub</span></a>
+<a href="mailto:shahmilsaari@gmail.com" class="inline-flex items-center gap-2 bg-violet-600 hover:bg-violet-500 text-white px-8 py-4 rounded-full font-medium transition-all">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+Email Me
+</a>
+<a href="https://linkedin.com/in/shahmil-saari" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 border border-white/10 hover:border-white/25 text-white/70 hover:text-white px-8 py-4 rounded-full font-medium transition-all">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+LinkedIn
+</a>
+<a href="https://github.com/shahmilsaari" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 border border-white/10 hover:border-white/25 text-white/70 hover:text-white px-8 py-4 rounded-full font-medium transition-all">
+<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+GitHub
+</a>
+</div>
 </div>
 </section>
 
 </main>
 
 <!-- Footer -->
-<footer class="bg-surface-container-lowest border-t border-outline-variant">
-<div class="w-full py-12 px-gutter-desktop flex flex-col md:flex-row justify-between items-center gap-4 max-w-max-width mx-auto">
-<div class="flex flex-col items-center md:items-start gap-2">
-<span class="font-title-md text-title-md font-bold text-on-surface">Shahmil Saari</span>
-<p class="font-body-md text-body-md text-on-secondary-container">© 2026 Shahmil Saari. Built with Material Design 3.</p>
-</div>
-<div class="flex gap-6">
-<a class="text-on-secondary-container hover:text-primary transition-colors underline-offset-4 hover:underline font-body-md text-body-md" href="mailto:shahmilsaari@gmail.com">Email</a>
-<a class="text-on-secondary-container hover:text-primary transition-colors underline-offset-4 hover:underline font-body-md text-body-md" href="https://linkedin.com/in/shahmil-saari" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-<a class="text-on-secondary-container hover:text-primary transition-colors underline-offset-4 hover:underline font-body-md text-body-md" href="https://github.com/shahmilsaari" target="_blank" rel="noopener noreferrer">GitHub</a>
-<a class="text-on-secondary-container hover:text-primary transition-colors underline-offset-4 hover:underline font-body-md text-body-md" href="https://shahmilsaari.my" target="_blank" rel="noopener noreferrer">Portfolio</a>
+<footer class="border-t border-white/5">
+<div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-sm text-white/30">© 2026 Shahmil Saari. Built with intent.</p>
+<div class="flex gap-8 text-sm text-white/30">
+<a href="mailto:shahmilsaari@gmail.com" class="hover:text-white/60 transition-colors">Email</a>
+<a href="https://github.com/shahmilsaari" target="_blank" rel="noopener noreferrer" class="hover:text-white/60 transition-colors">GitHub</a>
+<a href="https://linkedin.com/in/shahmil-saari" target="_blank" rel="noopener noreferrer" class="hover:text-white/60 transition-colors">LinkedIn</a>
+<a href="https://shahmilsaari.my" target="_blank" rel="noopener noreferrer" class="hover:text-white/60 transition-colors">Portfolio</a>
 </div>
 </div>
 </footer>
 
 <script>
-const observerOptions={threshold:0.1,rootMargin:'0px 0px -50px 0px'};
-const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},observerOptions);
-document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
-
-const nav=document.getElementById('top-nav');
-window.addEventListener('scroll',()=>{if(window.scrollY>20){nav?.classList.add('scroll-elevation-3')}else{nav?.classList.remove('scroll-elevation-3')}});
-
-document.querySelectorAll('.bg-surface-container-low, .bg-primary-container, .bg-secondary-container, .bg-tertiary-container').forEach(card=>{
-card.addEventListener('mouseenter',()=>{card.style.transform='translateY(-4px)';card.style.transition='transform 0.3s ease'});
-card.addEventListener('mouseleave',()=>{card.style.transform='translateY(0)'});
+// Intersection observer for fade-in
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.style.opacity = '1';
+entry.target.style.transform = 'translateY(0)';
+}
 });
-
-// Mobile nav toggle
-const menuBtn=document.getElementById('mobile-menu-btn');const navLinks=document.getElementById('nav-links');
-if(menuBtn){menuBtn.addEventListener('click',()=>{navLinks?.classList.toggle('hidden')})}
+}, { threshold: 0.1 });
+document.querySelectorAll('.glass-card, section[id]').forEach(el => {
+if (!el.id) return;
+el.style.opacity = '0';
+el.style.transform = 'translateY(20px)';
+el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+observer.observe(el);
+});
 </script>
 </body>
 </html>
