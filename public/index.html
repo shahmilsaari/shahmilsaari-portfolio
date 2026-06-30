@@ -1,346 +1,271 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Shahmil Saari — Tech Lead & AI Engineer. Building scalable architectures, Kubernetes ecosystems, and AI-powered infrastructure.">
-<meta property="og:title" content="Shahmil Saari | Tech Lead & AI Engineer">
-<meta property="og:description" content="Scaling systems and leading engineers with architectural precision.">
-<meta property="og:type" content="website">
-<link rel="icon" href="/favicon.svg">
-<title>Shahmil Saari | Tech Lead & AI Engineer</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
+<title>Shahmil Saari</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-@keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  33% { transform: translateY(-10px) rotate(1deg); }
-  66% { transform: translateY(5px) rotate(-1deg); }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'JetBrains Mono', monospace;
+  background: #0f0f0f;
+  color: #d4d4d4;
+  font-size: 14px;
+  line-height: 1.7;
 }
-@keyframes pulse-soft {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.8; }
+a { color: inherit; text-decoration: underline; text-decoration-color: #555; text-underline-offset: 3px; }
+a:hover { color: #fff; text-decoration-color: #fff; }
+.container { max-width: 720px; margin: 0 auto; padding: 48px 24px; }
+hr { border: none; border-top: 1px solid #222; margin: 48px 0; }
+
+/* Terminal header */
+.terminal-line { color: #888; font-size: 12px; margin-bottom: 4px; }
+.terminal-line span { color: #50fa7b; }
+.terminal-line .path { color: #569cd6; }
+.terminal-line .cursor { animation: blink 1s step-end infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+h1 { font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+h2 { font-size: 18px; font-weight: 500; color: #fff; margin-bottom: 20px; margin-top: 48px; }
+h2:first-of-type { margin-top: 0; }
+h3 { font-size: 14px; font-weight: 500; color: #fff; margin-bottom: 4px; }
+p { margin-bottom: 16px; color: #999; }
+.tagline { color: #569cd6; margin-bottom: 24px; font-size: 13px; }
+.location { color: #555; font-size: 12px; margin-bottom: 32px; }
+.meta { color: #555; font-size: 12px; }
+
+.links { display: flex; gap: 24px; margin-bottom: 48px; flex-wrap: wrap; }
+.links a { font-size: 13px; text-decoration: none; color: #888; }
+.links a:hover { color: #fff; }
+
+.projects { display: flex; flex-direction: column; gap: 32px; margin-bottom: 16px; }
+.project { }
+.project-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 4px; }
+.project-name { color: #569cd6; font-weight: 500; font-size: 14px; }
+.project-tag { color: #555; font-size: 11px; }
+.project p { font-size: 13px; margin-bottom: 8px; color: #777; }
+.project-stack { display: flex; flex-wrap: wrap; gap: 6px; }
+.project-stack span {
+  font-size: 11px;
+  color: #666;
+  background: #1a1a1a;
+  padding: 2px 8px;
+  border-radius: 2px;
 }
-@keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+
+.job { margin-bottom: 28px; }
+.job-title { color: #fff; font-weight: 500; }
+.job-company { color: #569cd6; }
+.job-date { color: #555; font-size: 12px; }
+.job ul { list-style: none; margin-top: 8px; }
+.job ul li { color: #777; font-size: 13px; margin-bottom: 4px; padding-left: 16px; position: relative; }
+.job ul li::before { content: '>'; position: absolute; left: 0; color: #444; }
+
+.skills { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.skills span {
+  font-size: 12px;
+  color: #888;
+  background: #1a1a1a;
+  padding: 3px 10px;
+  border-radius: 2px;
 }
-.animate-gradient { background-size: 200% 200%; animation: gradient-shift 8s ease infinite; }
-.animate-float { animation: float 6s ease-in-out infinite; }
-.animate-pulse-soft { animation: pulse-soft 3s ease-in-out infinite; }
-.glass { background: rgba(15, 15, 25, 0.7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.06); }
-.glass-card { background: rgba(20, 20, 35, 0.6); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.06); }
-.glass-card:hover { background: rgba(30, 30, 50, 0.7); border-color: rgba(139, 92, 246, 0.3); }
-.gradient-text { background: linear-gradient(135deg, #22d3ee, #60a5fa, #2dd4bf); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.gradient-text-simple { background: linear-gradient(135deg, #67e8f9, #60a5fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.gradient-border { position: relative; }
-.gradient-border::before { content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px; background: linear-gradient(135deg, rgba(6,182,212,0.5), rgba(59,130,246,0.3), rgba(45,212,191,0.2)); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Inter', sans-serif; background: #0a0a14; color: #e2e8f0; }
-::selection { background: rgba(139, 92, 246, 0.3); }
-.hide-scrollbar::-webkit-scrollbar { display: none; }
-.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-.tag { padding: 4px 12px; border-radius: 9999px; font-size: 12px; font-weight: 500; background: rgba(6,182,212,0.1); color: #22d3ee; border: 1px solid rgba(6,182,212,0.15); transition: all 0.2s; }
-.tag:hover { background: rgba(6,182,212,0.2); border-color: rgba(6,182,212,0.3); }
-.section-label { font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #22d3ee; margin-bottom: 8px; }
+
+.edu-item { margin-bottom: 16px; }
+.edu-item .title { color: #ccc; }
+.edu-item .detail { color: #555; font-size: 12px; }
+.edu-item .gpa { color: #569cd6; font-size: 12px; }
+
+footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid #222; color: #444; font-size: 12px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+footer a { color: #555; }
 </style>
 </head>
 <body>
+<div class="container">
 
-<!-- Nav -->
-<nav class="fixed top-0 left-0 right-0 z-50 glass">
-<div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-<a href="#" class="text-lg font-semibold tracking-tight text-white/90">Shahmil<span class="text-cyan-300">.</span></a>
-<div class="hidden md:flex items-center gap-8">
-<a href="#about" class="text-sm text-white/50 hover:text-white/90 transition-colors">About</a>
-<a href="#projects" class="text-sm text-white/50 hover:text-white/90 transition-colors">Projects</a>
-<a href="#experience" class="text-sm text-white/50 hover:text-white/90 transition-colors">Experience</a>
-<a href="#skills" class="text-sm text-white/50 hover:text-white/90 transition-colors">Skills</a>
-<a href="#contact" class="text-sm bg-cyan-500 hover:bg-cyan-400 text-white px-5 py-2 rounded-full transition-all font-medium">Contact</a>
-</div>
-</div>
-</nav>
+<!-- Terminal header -->
+<div class="terminal-line"><span>shahmil</span><span class="path">@server</span>:<span class="path">~</span>$ cat portfolio.md</div>
+<div class="terminal-line" style="margin-bottom: 32px;">___________________________________________</div>
 
-<main class="max-w-6xl mx-auto px-6">
+<h1>Shahmil Saari</h1>
+<p class="tagline">tech lead / fullstack developer / ai tooling</p>
+<p class="location">Kuala Lumpur, Malaysia</p>
 
-<!-- Hero -->
-<section class="min-h-screen flex flex-col justify-center relative overflow-hidden" id="hero">
-<div class="absolute inset-0 overflow-hidden pointer-events-none">
-<div class="absolute -top-40 -right-40 w-96 h-96 bg-cyan-500/20 rounded-full blur-[100px] animate-pulse-soft"></div>
-<div class="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-600/15 rounded-full blur-[100px] animate-pulse-soft" style="animation-delay: 1.5s;"></div>
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal-500/5 rounded-full blur-[120px]"></div>
+<div class="links">
+<a href="mailto:shahmilsaari@gmail.com">email</a>
+<a href="https://github.com/shahmilsaari" target="_blank">github</a>
+<a href="https://linkedin.com/in/shahmil-saari" target="_blank">linkedin</a>
+<a href="https://memory-core.shahmilsaari.my/" target="_blank">memory-core</a>
 </div>
-<div class="relative z-10 max-w-3xl">
-<div class="flex items-center gap-2 mb-6">
-<span class="inline-block w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-<span class="text-sm text-white/40 font-mono">Available for collaboration</span>
+
+<h2># about</h2>
+<p>I build infrastructure that doesn't fall over at 3am. 5+ years doing backend, frontend, kubernetes, and herding engineers. Currently tech lead at Lapasar, where I migrated monoliths to microservices and convinced 10 engineers that ArgoCD is not a cult (it's a lifestyle).</p>
+
+<h2># projects</h2>
+<div class="projects">
+
+<div class="project">
+<div class="project-header">
+<span class="project-name">command center</span>
+<span class="project-tag">[active]</span>
 </div>
-<h1 class="text-5xl md:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
-<span class="text-white">Hi, I'm</span><br>
-<span class="gradient-text">Shahmil Saari</span>
-</h1>
-<p class="text-lg md:text-xl text-white/40 leading-relaxed max-w-2xl mb-10">
-Tech Lead & AI Tooling Engineer. I build scalable architectures, lead engineering teams, and create infrastructure that doesn't break at 3 AM.
+<p>Full-stack monitoring dashboard for my home server. FastAPI + React. Shows real-time GPU temps, K8s pod status, ArgoCD sync state, and has an AI-powered wiki search that actually works. Runs on tailscale, zero public surface.</p>
+<div class="project-stack"><span>fastapi</span><span>react</span><span>tailwind</span><span>tailscale</span><span>k8s</span></div>
+</div>
+
+<div class="project">
+<div class="project-header">
+<span class="project-name">memory core</span>
+<span class="project-tag">[npm: @shahmilsaari/memory-core]</span>
+</div>
+<p>Node.js CLI that generates AI context files from architecture profiles. 7.2k downloads. Uses pgvector for embeddings, ollama for inference. Claude, Cursor, Copilot all eat the output. v1.0.47.</p>
+<div class="project-stack"><span>node.js</span><span>pgvector</span><span>postgresql</span><span>ollama</span></div>
+</div>
+
+<div class="project">
+<div class="project-header">
+<span class="project-name">llm wiki</span>
+<span class="project-tag">[github]</span>
+</div>
+<p>Self-hosted knowledge base. Markdown files in an Obsidian vault, auto-synced to GitHub every 2 hours. Integrated into command center with full-text search and an AI Q&A that reads the wiki to answer questions.</p>
+<div class="project-stack"><span>markdown</span><span>obsidian</span><span>git</span></div>
+</div>
+
+<div class="project">
+<div class="project-header">
+<span class="project-name">9router</span>
+<span class="project-tag">[microk8s]</span>
+</div>
+<p>LLM request router on my home cluster. Sits between ollama and cloud providers (openrouter, etc.) with rate limiting, usage tracking, failover. Hermes talks to it through ollama proxy.</p>
+<div class="project-stack"><span>node.js</span><span>microk8s</span><span>sqlite</span></div>
+</div>
+
+<div class="project">
+<div class="project-header">
+<span class="project-name">venso</span>
+<span class="project-tag">[venso.my]</span>
+</div>
+<p>Concert ticket marketplace. Go API, multi-frontend (admin/vendor/customer), deployed on K8s via ArgoCD. PostgreSQL, NATS for eventing.</p>
+<div class="project-stack"><span>go</span><span>nestjs</span><span>argocd</span><span>postgresql</span></div>
+</div>
+
+<div class="project">
+<div class="project-header">
+<span class="project-name">comfyui</span>
+<span class="project-tag">[rtx 3060 ti]</span>
+</div>
+<p>Stable Diffusion pipeline on my home server. RealVisXL + ESRGAN upscaler + GFPGAN for faces. GPU-powered image gen accessible via API.</p>
+<div class="project-stack"><span>python</span><span>cuda</span><span>stable-diffusion</span></div>
+</div>
+
+</div>
+
+<h2># experience</h2>
+
+<div class="job">
+<div class="job-title">Tech Lead <span class="job-company">@ Lapasar</span></div>
+<div class="job-date">June 2024 — present</div>
+<ul>
+<li>Migrated distributed systems to Kubernetes/ArgoCD</li>
+<li>Managed 10M+ MongoDB records with composite indexing</li>
+<li>Led 10 engineers, sprint velocity up 30%</li>
+<li>Microservices in NestJS, Fastify, Hono</li>
+</ul>
+</div>
+
+<div class="job">
+<div class="job-title">Jr. Fullstack Developer <span class="job-company">@ Lapasar</span></div>
+<div class="job-date">June 2021 — June 2024</div>
+<ul>
+<li>Angular/Vue.js portals — 20% ops efficiency gain</li>
+<li>Optimized GraphQL/REST APIs, 25% faster responses</li>
+<li>10+ mobile features, 100% API uptime</li>
+</ul>
+</div>
+
+<div class="job">
+<div class="job-title">IT Intern <span class="job-company">@ Felda Kerteh 6</span></div>
+<div class="job-date">2020 — 2021</div>
+<ul>
+<li>Built custom registry system, 90% fewer manual errors</li>
+<li>MySQL tuning and admin support</li>
+</ul>
+</div>
+
+<h2># technical arsenal</h2>
+
+<div style="margin-bottom: 24px;">
+<div style="color:#888; margin-bottom:8px;">backend</div>
+<div class="skills"><span>typescript</span><span>nestjs</span><span>node.js</span><span>graphql</span><span>fastify</span><span>hono</span></div>
+</div>
+
+<div style="margin-bottom: 24px;">
+<div style="color:#888; margin-bottom:8px;">frontend</div>
+<div class="skills"><span>react</span><span>svelte</span><span>angular</span><span>vue.js</span><span>astro</span></div>
+</div>
+
+<div style="margin-bottom: 24px;">
+<div style="color:#888; margin-bottom:8px;">cloud & devops</div>
+<div class="skills"><span>kubernetes</span><span>argocd</span><span>docker</span><span>aws</span><span>tailscale</span><span>grafana</span></div>
+</div>
+
+<div style="margin-bottom: 24px;">
+<div style="color:#888; margin-bottom:8px;">ai & llm</div>
+<div class="skills"><span>claude api</span><span>mcp</span><span>ollama</span><span>langchain</span><span>tensorflow</span></div>
+</div>
+
+<div style="margin-bottom: 24px;">
+<div style="color:#888; margin-bottom:8px;">databases</div>
+<div class="skills"><span>postgresql</span><span>mongodb</span><span>mysql</span><span>redis</span><span>pgvector</span></div>
+</div>
+
+<div style="margin-bottom: 24px;">
+<div style="color:#888; margin-bottom:8px;">infrastructure</div>
+<div class="skills"><span>nats</span><span>event-driven</span><span>microservices</span><span>ci/cd</span></div>
+</div>
+
+<h2># education & stuff</h2>
+
+<div class="edu-item">
+<div class="title">Bachelor of IT <span class="gpa">— 3.44</span></div>
+<div class="detail">UiTM Perlis — 2021</div>
+</div>
+
+<div class="edu-item">
+<div class="title">Diploma of Wood Industry <span class="gpa">— 3.31</span></div>
+<div class="detail">UiTM Jengka — 2017</div>
+</div>
+
+<div class="edu-item">
+<div class="title">JavaScript Professional</div>
+<div class="detail">CertiProf — 2022</div>
+</div>
+
+<div class="edu-item">
+<div class="title">Best Staff Award</div>
+<div class="detail">Lapasar — 2022</div>
+</div>
+
+<div class="edu-item">
+<div class="title">Best Intern Award</div>
+<div class="detail">Felda — 2021</div>
+</div>
+
+<p style="margin-top: 48px; color: #444; font-size: 13px;">
+Currently open to talking — leadership roles, ai projects, systems architecture. Hit me up.
 </p>
-<div class="flex flex-wrap gap-4">
-<a href="mailto:shahmilsaari@gmail.com" class="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-white px-8 py-3.5 rounded-full font-medium transition-all">
-<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-Email Me
-</a>
-<a href="https://github.com/shahmilsaari" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 border border-white/10 hover:border-white/25 text-white/70 hover:text-white px-8 py-3.5 rounded-full font-medium transition-all">
-<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-GitHub
-</a>
-<a href="https://linkedin.com/in/shahmil-saari" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 border border-white/10 hover:border-white/25 text-white/70 hover:text-white px-8 py-3.5 rounded-full font-medium transition-all">
-<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-LinkedIn
-</a>
-</div>
-</div>
-</section>
 
-<!-- Stats -->
-<section class="py-20 md:py-28">
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-<div class="glass-card rounded-2xl p-6 text-center">
-<div class="text-3xl md:text-4xl font-bold gradient-text-simple mb-1">5+</div>
-<div class="text-sm text-white/40">Years Experience</div>
+<div class="links" style="margin-bottom: 0;">
+<a href="mailto:shahmilsaari@gmail.com">email</a>
+<a href="https://github.com/shahmilsaari" target="_blank">github</a>
+<a href="https://linkedin.com/in/shahmil-saari" target="_blank">linkedin</a>
 </div>
-<div class="glass-card rounded-2xl p-6 text-center">
-<div class="text-3xl md:text-4xl font-bold gradient-text-simple mb-1">10</div>
-<div class="text-sm text-white/40">Engineers Led</div>
-</div>
-<div class="glass-card rounded-2xl p-6 text-center">
-<div class="text-3xl md:text-4xl font-bold gradient-text-simple mb-1">7.2k</div>
-<div class="text-sm text-white/40">NPM Downloads</div>
-</div>
-<div class="glass-card rounded-2xl p-6 text-center">
-<div class="text-3xl md:text-4xl font-bold gradient-text-simple mb-1">10M+</div>
-<div class="text-sm text-white/40">DB Records</div>
-</div>
-</div>
-</section>
 
-<!-- About -->
-<section class="py-20 md:py-28" id="about">
-<div class="max-w-3xl">
-<div class="section-label">About</div>
-<h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Engineering <span class="gradient-text">Impact</span></h2>
-<p class="text-lg text-white/40 leading-relaxed mb-8">
-Results-oriented Tech Lead specializing in building robust, scalable architectures and leading high-performing engineering teams. Passionate about AI tooling, Kubernetes ecosystems, and microservices. I focus on bridging the gap between complex technical debt and modern, automated infrastructure.
-</p>
-</div>
-</section>
-
-<!-- Featured Project -->
-<section class="py-12">
-<div class="glass-card rounded-3xl p-8 md:p-12 relative overflow-hidden">
-<div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-cyan-500/10 to-blue-600/5 rounded-full blur-[80px]"></div>
-<div class="relative z-10">
-<div class="flex flex-wrap gap-3 mb-6">
-<span class="px-3 py-1 rounded-full text-xs font-medium bg-cyan-500/20 text-cyan-200 border border-cyan-500/20">Featured Open Source</span>
-<span class="px-3 py-1 rounded-full text-xs font-medium bg-white/5 text-white/40">v1.0.47</span>
-</div>
-<h3 class="text-2xl md:text-3xl font-bold text-white mb-4">@shahmilsaari/memory-core</h3>
-<p class="text-white/40 leading-relaxed mb-6 max-w-2xl">Universal AI memory core — generate AI context files from architecture profiles with RAG support. Integrates with Claude, Cursor, Copilot and other AI tools for project-specific intelligence. <span class="text-white/60">7,200+ downloads.</span></p>
-<div class="flex flex-wrap gap-2 mb-8">
-<span class="tag">RAG</span><span class="tag">CLI</span><span class="tag">Node.js</span><span class="tag">Claude</span><span class="tag">Cursor</span><span class="tag">Copilot</span>
-</div>
-<a href="https://memory-core.shahmilsaari.my/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-cyan-300 hover:text-cyan-200 font-medium transition-colors text-sm">
-Visit Website
-<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-</a>
-</div>
-</div>
-</section>
-
-<!-- Projects -->
-<section class="py-20 md:py-28" id="projects">
-<div class="section-label">Projects</div>
-<h2 class="text-3xl md:text-4xl font-bold text-white mb-12">Things I've <span class="gradient-text">Built</span></h2>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-<a href="https://github.com/shahmilsaari/command-center" target="_blank" rel="noopener noreferrer" class="group glass-card rounded-2xl p-6 transition-all hover:-translate-y-1">
-<div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-xl bg-cyan-500/20 flex items-center justify-center"><svg class="w-5 h-5 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div><h3 class="font-semibold text-white group-hover:text-cyan-200 transition-colors">Command Center</h3></div>
-<p class="text-sm text-white/40 leading-relaxed mb-4">Full-stack server monitoring dashboard. FastAPI + React with real-time stats, health checks, K8s pod viewer, ArgoCD status, and AI wiki Q&A.</p>
-<div class="flex flex-wrap gap-1.5"><span class="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300">FastAPI</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-600/10 text-blue-400">React</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-teal-600/10 text-teal-400">Tailwind</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-white/30">Tailscale</span></div>
-</a>
-<a href="https://memory-core.shahmilsaari.my/" target="_blank" rel="noopener noreferrer" class="group glass-card rounded-2xl p-6 transition-all hover:-translate-y-1">
-<div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-xl bg-cyan-500/20 flex items-center justify-center"><svg class="w-5 h-5 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg></div><h3 class="font-semibold text-white group-hover:text-cyan-200 transition-colors">Memory Core</h3></div>
-<p class="text-sm text-white/40 leading-relaxed mb-4">AI context generation engine. Embedding-based retrieval from PostgreSQL/pgvector. Generates structured context files for Claude, Cursor, and Copilot.</p>
-<div class="flex flex-wrap gap-1.5"><span class="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300">Node.js</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-600/10 text-blue-400">pgvector</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-teal-600/10 text-teal-400">PostgreSQL</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-white/30">Ollama</span></div>
-</a>
-<a href="https://github.com/shahmilsaari/wiki" target="_blank" rel="noopener noreferrer" class="group glass-card rounded-2xl p-6 transition-all hover:-translate-y-1">
-<div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-xl bg-blue-600/20 flex items-center justify-center"><svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></div><h3 class="font-semibold text-white group-hover:text-blue-300 transition-colors">LLM Wiki</h3></div>
-<p class="text-sm text-white/40 leading-relaxed mb-4">Self-hosted knowledge base as interlinked markdown files. Obsidian vault with auto-sync, full-text search, and AI-powered Q&A over wiki content.</p>
-<div class="flex flex-wrap gap-1.5"><span class="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300">Markdown</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-600/10 text-blue-400">Obsidian</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-teal-600/10 text-teal-400">Git</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-white/30">Docsify</span></div>
-</a>
-<a href="https://router.shahmilsaari.my/" target="_blank" rel="noopener noreferrer" class="group glass-card rounded-2xl p-6 transition-all hover:-translate-y-1">
-<div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-xl bg-teal-600/20 flex items-center justify-center"><svg class="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg></div><h3 class="font-semibold text-white group-hover:text-teal-300 transition-colors">9Router</h3></div>
-<p class="text-sm text-white/40 leading-relaxed mb-4">AI request router on MicroK8s. Routes LLM requests across providers with usage tracking, rate limiting, and provider failover.</p>
-<div class="flex flex-wrap gap-1.5"><span class="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300">MicroK8s</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-600/10 text-blue-400">Node.js</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-teal-600/10 text-teal-400">SQLite</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-white/30">Docker</span></div>
-</a>
-<a href="https://venso.my/" target="_blank" rel="noopener noreferrer" class="group glass-card rounded-2xl p-6 transition-all hover:-translate-y-1">
-<div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-xl bg-amber-600/20 flex items-center justify-center"><svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"/></svg></div><h3 class="font-semibold text-white group-hover:text-amber-300 transition-colors">Venso</h3></div>
-<p class="text-sm text-white/40 leading-relaxed mb-4">Concert ticket marketplace. Go API backend with multi-frontend architecture (admin, vendor, customer). GitOps with ArgoCD.</p>
-<div class="flex flex-wrap gap-1.5"><span class="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300">Go</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-600/10 text-blue-400">NestJS</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-teal-600/10 text-teal-400">ArgoCD</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-white/30">PostgreSQL</span></div>
-</a>
-<a href="https://github.com/comfyanonymous/ComfyUI" target="_blank" rel="noopener noreferrer" class="group glass-card rounded-2xl p-6 transition-all hover:-translate-y-1">
-<div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-xl bg-pink-600/20 flex items-center justify-center"><svg class="w-5 h-5 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div><h3 class="font-semibold text-white group-hover:text-pink-300 transition-colors">ComfyUI</h3></div>
-<p class="text-sm text-white/40 leading-relaxed mb-4">Stable Diffusion pipeline on RTX 3060 Ti. RealVisXL + ESRGAN upscaler + GFPGAN face restoration. GPU-accelerated image generation.</p>
-<div class="flex flex-wrap gap-1.5"><span class="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-300">Python</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-blue-600/10 text-blue-400">CUDA</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-teal-600/10 text-teal-400">Stable Diffusion</span><span class="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-white/30">RTX 3060 Ti</span></div>
-</a>
-</div>
-</section>
-
-<!-- Experience -->
-<section class="py-20 md:py-28" id="experience">
-<div class="section-label">Experience</div>
-<h2 class="text-3xl md:text-4xl font-bold text-white mb-12">Where I've <span class="gradient-text">Worked</span></h2>
-<div class="space-y-6">
-<div class="glass-card rounded-2xl p-8 relative overflow-hidden">
-<div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-cyan-400 to-cyan-400/20"></div>
-<div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
-<div><h3 class="text-xl font-semibold text-white">Tech Lead</h3><p class="text-white/40 text-sm">Lapasar Sdn Bhd</p></div>
-<span class="text-xs font-mono text-cyan-300 bg-cyan-500/10 px-3 py-1 rounded-full self-start">June 2024 – Present</span>
-</div>
-<ul class="space-y-2 text-sm text-white/40">
-<li class="flex items-start gap-2"><span class="text-cyan-300 mt-1">▸</span> Orchestrated Kubernetes/ArgoCD migration for distributed systems.</li>
-<li class="flex items-start gap-2"><span class="text-cyan-300 mt-1">▸</span> Managed 10M+ records in MongoDB with advanced indexing strategies.</li>
-<li class="flex items-start gap-2"><span class="text-cyan-300 mt-1">▸</span> Led a squad of 10 engineers, increasing sprint velocity by 30%.</li>
-<li class="flex items-start gap-2"><span class="text-cyan-300 mt-1">▸</span> Architected microservices using NestJS, Fastify, and Hono.</li>
-</ul>
-</div>
-<div class="glass-card rounded-2xl p-8 relative overflow-hidden">
-<div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-blue-500 to-blue-500/20"></div>
-<div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
-<div><h3 class="text-xl font-semibold text-white">Junior Fullstack Developer</h3><p class="text-white/40 text-sm">Lapasar Sdn Bhd</p></div>
-<span class="text-xs font-mono text-blue-400 bg-blue-600/10 px-3 py-1 rounded-full self-start">June 2021 – June 2024</span>
-</div>
-<ul class="space-y-2 text-sm text-white/40">
-<li class="flex items-start gap-2"><span class="text-blue-400 mt-1">▸</span> Developed Angular/Vue.js portals, driving 20% operational efficiency.</li>
-<li class="flex items-start gap-2"><span class="text-blue-400 mt-1">▸</span> Optimized GraphQL/REST APIs achieving 25% faster response times.</li>
-<li class="flex items-start gap-2"><span class="text-blue-400 mt-1">▸</span> Integrated 10+ mobile app features with 100% API uptime.</li>
-</ul>
-</div>
-<div class="glass-card rounded-2xl p-8 relative overflow-hidden">
-<div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-teal-500 to-teal-500/20"></div>
-<div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-4">
-<div><h3 class="text-xl font-semibold text-white">IT Intern</h3><p class="text-white/40 text-sm">Felda Kerteh 6 Office</p></div>
-<span class="text-xs font-mono text-teal-400 bg-teal-600/10 px-3 py-1 rounded-full self-start">2020 – 2021</span>
-</div>
-<ul class="space-y-2 text-sm text-white/40">
-<li class="flex items-start gap-2"><span class="text-teal-400 mt-1">▸</span> Built a custom registry system, reducing manual entry errors by 90%.</li>
-<li class="flex items-start gap-2"><span class="text-teal-400 mt-1">▸</span> Performed MySQL database tuning and administrative support.</li>
-</ul>
-</div>
-</div>
-</section>
-
-<!-- Skills -->
-<section class="py-20 md:py-28" id="skills">
-<div class="section-label">Skills</div>
-<h2 class="text-3xl md:text-4xl font-bold text-white mb-12">Technical <span class="gradient-text">Arsenal</span></h2>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-<div class="glass-card rounded-2xl p-6">
-<h3 class="flex items-center gap-2 font-semibold text-white mb-4"><svg class="w-5 h-5 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg> Backend</h3>
-<div class="flex flex-wrap gap-2"><span class="tag">TypeScript</span><span class="tag">NestJS</span><span class="tag">Node.js</span><span class="tag">GraphQL</span><span class="tag">Fastify</span><span class="tag">Hono</span></div>
-</div>
-<div class="glass-card rounded-2xl p-6">
-<h3 class="flex items-center gap-2 font-semibold text-white mb-4"><svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg> Frontend</h3>
-<div class="flex flex-wrap gap-2"><span class="tag">React</span><span class="tag">Svelte</span><span class="tag">Angular</span><span class="tag">Vue.js</span><span class="tag">Astro</span></div>
-</div>
-<div class="glass-card rounded-2xl p-6">
-<h3 class="flex items-center gap-2 font-semibold text-white mb-4"><svg class="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg> Cloud & DevOps</h3>
-<div class="flex flex-wrap gap-2"><span class="tag">Kubernetes</span><span class="tag">ArgoCD</span><span class="tag">AWS</span><span class="tag">Docker</span><span class="tag">Grafana</span></div>
-</div>
-<div class="glass-card rounded-2xl p-6">
-<h3 class="flex items-center gap-2 font-semibold text-white mb-4"><svg class="w-5 h-5 text-cyan-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg> AI & LLM</h3>
-<div class="flex flex-wrap gap-2"><span class="tag">Claude API</span><span class="tag">MCP</span><span class="tag">Ollama</span><span class="tag">LangChain</span><span class="tag">TensorFlow</span></div>
-</div>
-<div class="glass-card rounded-2xl p-6">
-<h3 class="flex items-center gap-2 font-semibold text-white mb-4"><svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/></svg> Databases</h3>
-<div class="flex flex-wrap gap-2"><span class="tag">PostgreSQL</span><span class="tag">MongoDB</span><span class="tag">MySQL</span><span class="tag">Redis</span><span class="tag">pgvector</span></div>
-</div>
-<div class="glass-card rounded-2xl p-6">
-<h3 class="flex items-center gap-2 font-semibold text-white mb-4"><svg class="w-5 h-5 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/></svg> Infrastructure</h3>
-<div class="flex flex-wrap gap-2"><span class="tag">NATS</span><span class="tag">Event-driven</span><span class="tag">Microservices</span><span class="tag">CI/CD</span><span class="tag">Tailscale</span></div>
-</div>
-</div>
-</section>
-
-<!-- Education -->
-<section class="py-20 md:py-28">
-<div class="section-label">Background</div>
-<h2 class="text-3xl md:text-4xl font-bold text-white mb-12">Education & <span class="gradient-text">Awards</span></h2>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div class="glass-card rounded-2xl p-6">
-<div class="flex justify-between items-start mb-2"><h3 class="font-semibold text-white">Bachelor of IT</h3><span class="text-xs font-mono text-cyan-300">3.44 CGPA</span></div>
-<p class="text-sm text-white/40">UiTM Perlis — 2021</p>
-</div>
-<div class="glass-card rounded-2xl p-6">
-<div class="flex justify-between items-start mb-2"><h3 class="font-semibold text-white">Diploma of Wood Industry</h3><span class="text-xs font-mono text-cyan-300">3.31 CGPA</span></div>
-<p class="text-sm text-white/40">UiTM Jengka — 2017</p>
-</div>
-<div class="flex items-center gap-4 glass-card rounded-2xl p-6"><span class="w-10 h-10 rounded-xl bg-cyan-500/20 flex items-center justify-center"><span class="text-cyan-300 text-lg">🏆</span></span><div><p class="font-medium text-white">JavaScript Professional</p><p class="text-xs text-white/40">CertiProf — 2022</p></div></div>
-<div class="flex items-center gap-4 glass-card rounded-2xl p-6"><span class="w-10 h-10 rounded-xl bg-blue-600/20 flex items-center justify-center"><span class="text-blue-400 text-lg">🏆</span></span><div><p class="font-medium text-white">Best Staff Award</p><p class="text-xs text-white/40">Lapasar — 2022</p></div></div>
-</div>
-</section>
-
-<!-- Contact -->
-<section class="py-20 md:py-28 text-center" id="contact">
-<div class="max-w-2xl mx-auto">
-<h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Let's build something <span class="gradient-text">exceptional</span></h2>
-<p class="text-white/40 text-lg mb-10">Currently open to leadership roles, AI-driven projects, and complex system architecting.</p>
-<div class="flex flex-wrap justify-center gap-4">
-<a href="mailto:shahmilsaari@gmail.com" class="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-white px-8 py-4 rounded-full font-medium transition-all">
-<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-Email Me
-</a>
-<a href="https://linkedin.com/in/shahmil-saari" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 border border-white/10 hover:border-white/25 text-white/70 hover:text-white px-8 py-4 rounded-full font-medium transition-all">
-<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-LinkedIn
-</a>
-<a href="https://github.com/shahmilsaari" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 border border-white/10 hover:border-white/25 text-white/70 hover:text-white px-8 py-4 rounded-full font-medium transition-all">
-<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-GitHub
-</a>
-</div>
-</div>
-</section>
-
-</main>
-
-<!-- Footer -->
-<footer class="border-t border-white/5">
-<div class="max-w-6xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-4">
-<p class="text-sm text-white/30">© 2026 Shahmil Saari. Built with intent.</p>
-<div class="flex gap-8 text-sm text-white/30">
-<a href="mailto:shahmilsaari@gmail.com" class="hover:text-white/60 transition-colors">Email</a>
-<a href="https://github.com/shahmilsaari" target="_blank" rel="noopener noreferrer" class="hover:text-white/60 transition-colors">GitHub</a>
-<a href="https://linkedin.com/in/shahmil-saari" target="_blank" rel="noopener noreferrer" class="hover:text-white/60 transition-colors">LinkedIn</a>
-<a href="https://shahmilsaari.my" target="_blank" rel="noopener noreferrer" class="hover:text-white/60 transition-colors">Portfolio</a>
-</div>
-</div>
+<footer>
+<span>shahmil@server:~$ uptime --pretty</span>
+<span>© 2026</span>
 </footer>
 
-<script>
-// Intersection observer for fade-in
-const observer = new IntersectionObserver((entries) => {
-entries.forEach(entry => {
-if (entry.isIntersecting) {
-entry.target.style.opacity = '1';
-entry.target.style.transform = 'translateY(0)';
-}
-});
-}, { threshold: 0.1 });
-document.querySelectorAll('.glass-card, section[id]').forEach(el => {
-if (!el.id) return;
-el.style.opacity = '0';
-el.style.transform = 'translateY(20px)';
-el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-observer.observe(el);
-});
-</script>
+</div>
 </body>
 </html>
