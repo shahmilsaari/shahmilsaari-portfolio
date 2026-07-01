@@ -1,8 +1,10 @@
 {
+  "$schema": "https://json.schemastore.org/package.json",
   "name": "shahmilsaari-portfolio",
   "description": "Shahmil Saari — Tech Lead & AI Engineer portfolio",
   "private": true,
   "scripts": {
+    "build": "echo 'static site — no build needed'",
     "dev": "python3 -m http.server 8000 -d public/",
     "deploy": "npx wrangler deploy"
   },
